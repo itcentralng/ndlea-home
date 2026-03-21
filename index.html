@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NDLEA - Chronicle of Chairmen/CEOs</title>
+    <link rel="icon" type="image/x-icon" href="logo.ico">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Welcome/Start Screen -->
+    <div id="welcomeScreen" class="welcome-screen">
+        <div class="welcome-content">
+            <img src="images/ndlea-logo.png" alt="NDLEA Logo" class="welcome-logo">
+            <h1 class="welcome-title">NDLEA</h1>
+            <h2 class="welcome-subtitle">Chronicle of Chairmen/CEOs</h2>
+            <button id="enterButton" class="enter-button">
+                <span>OPEN</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </button>
+            <p class="welcome-note">Click to begin with audio</p>
+        </div>
+    </div>
+    
+    <!-- Background Audio -->
+    <audio id="backgroundAudio" loop>
+        <source src="audios/audio.mp3" type="audio/mpeg">
+    </audio>
+    
+    <!-- Video Background -->
+    <div class="video-background">
+        <video autoplay muted loop playsinline>
+            <source src="videos/video.mp4" type="video/mp4">
+        </video>
+    </div>
+    
+    <!-- Color Transition Strips -->
+    <div class="color-transition-container">
+        <div class="color-strip strip-1"></div>
+        <div class="color-strip strip-2"></div>
+        <div class="color-strip strip-3"></div>
+        <div class="color-strip strip-4"></div>
+        <div class="color-strip strip-5"></div>
+    </div>
+    
+    <!-- ============================================ -->
+    <!-- HOME VIEW -->
+    <!-- ============================================ -->
+    <div id="homeView" class="page-view active">
+        <header>
+            <div class="header-card-container">
+                <!-- Top Section: History Card Only -->
+                <div class="top-section">
+                    <div class="history-current-container">
+                        <!-- History Card -->
+                        <div class="history-card" onclick="showHistoryView()">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <div class="card-icon">
+                                        <img src="images/ndlea-logo.png" alt="NDLEA Logo" class="header-logo" id="logo">
+                                    </div>
+                                    <div class="card-title">HISTORY OF NDLEA</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="commanders-section">
+                <h1 id="typedTitle">CHRONICLE OF COMMAND<br>NATIONAL DRUG LAW ENFORCEMENT AGENCY</h1>
+                
+                <!-- Current GOC Biography Section -->
+                <section class="current-goc-biography">
+                    <div class="current-goc-badge">CURRENT CHAIRMAN/CEO</div>
+                    <div class="biography-layout" id="currentGocBiography">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </section>
+                
+                <!-- Commanders Grid -->
+                <div class="commanders-grid-wrapper">
+                    <div class="commanders-grid" id="commandersGrid">
+                        <!-- Commanders will be populated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- HISTORY VIEW -->
+    <!-- ============================================ -->
+    <div id="historyView" class="page-view">
+        <!-- Floating Back Button -->
+        <div class="floating-back-btn" onclick="showHomeView()" title="Back to Home">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M19 12H5M12 19L5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+
+        <!-- Floating Logo -->
+        <div class="floating-logo" onclick="showHomeView()" title="NDLEA - Home">
+            <img src="images/ndlea-logo.png" alt="NDLEA Logo">
+        </div>
+
+        <main>
+            <section class="history-section">
+                <!-- Hero Banner -->
+                <div class="history-hero-banner">
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content">
+                        <div class="hero-icon"><img src="images/ndlea-logo.png" alt="NDLEA Logo" style="width: 60px; height: 60px;"></div>
+                        <h1 class="hero-title">NATIONAL DRUG LAW ENFORCEMENT AGENCY</h1>
+                        <div class="hero-divider"></div>
+                        <p class="hero-motto">FIGHTING DRUG ABUSE IN ALL FORMS</p>
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">1989</div>
+                                <div class="stat-label">Established</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" id="gocsCount">10</div>
+                                <div class="stat-label">Chairmen/CEOs</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="history-content">
+                    <div class="history-section-card">
+                        <h2>1.</h2>
+                        <p>The National Drug Law Enforcement Agency (NDLEA) was established by Decree No. 48 of 29th December, 1989 during the military administration of General Ibrahim Babangida, GCFR. The Agency was created to coordinate and enforce all laws and regulations on narcotic drugs and psychotropic substances within Nigeria. Prior to the establishment of NDLEA, drug law enforcement responsibilities were fragmented across several agencies including the Nigeria Customs Service, the Nigeria Police Force, and the National Security Organisation. The alarming proliferation of illicit drug trafficking and abuse across Nigeria, and the consequent threat to national security and public health, necessitated the creation of a dedicated lead anti-narcotics agency. NDLEA became fully operational in January 1990 with the appointment of its pioneer Chairman.</p>
+                    </div>
+                    
+                    <div class="history-section-card">
+                        <h2>2.</h2>
+                        <p>NDLEA is Nigeria's lead institution in the war against illicit drug trafficking and abuse. The Agency is mandated to eliminate the growing, processing, manufacturing, selling, exporting, and trafficking of hard drugs and controlled substances throughout Nigeria and across its borders. The Agency is also empowered to identify, study, and treat drug-dependent individuals while creating public awareness on the dangers of drug abuse. NDLEA maintains a robust network of Zonal Commands spread across all states of the federation, with enforcement presence at all international airports, seaports, and major land border posts. The Agency collaborates with the United Nations Office on Drugs and Crime (UNODC), the International Narcotics Control Board (INCB), interpol, the Drug Enforcement Administration (DEA), and other bilateral and multilateral partners in the global fight against narcotic drug trafficking.</p>
+                    </div>
+                    
+                    <div class="history-section-card">
+                        <h2>3.</h2>
+                        <p>Since commencing operations in January 1990, NDLEA has recorded hundreds of tonnes of illicit drug seizures at Nigerian ports of entry and within the country's hinterland. The Agency has brought thousands of drug traffickers to justice and supported the conviction of major transnational drug syndicates. Under the current administration of Brig. Gen. MB Marwa (rtd) CON, OFR, which commenced in January 2021, NDLEA has achieved unprecedented operational successes, including record-breaking drug seizures that surpassed all previous annual records. The Agency has also significantly intensified its demand reduction campaign through programmes targeting schools, communities, religious bodies, and the entertainment industry. Through initiatives such as the Creatives Against Drug Abuse (CADA) and Operation LOUD (Let Our Youths Develop), NDLEA has deepened public engagement in the anti-drug campaign across all thirty-six states and the Federal Capital Territory.</p>
+                    </div>
+                    
+                    <div class="history-section-card">
+                        <h2>4.</h2>
+                        <p>The National Drug Law Enforcement Agency operates under four core pillars that define its institutional character and guide its mandate. These pillars represent the Agency's holistic approach to winning the war against drug abuse — recognising that effective anti-narcotics work requires not only enforcement but also prevention, treatment, and global partnership:</p>
+                    
+                        <div class="dragon-values">
+                            <div class="dragon-value-card">
+                                <div class="card-icon"><img src="images/ndlea-logo.png" alt="NDLEA Logo" style="width: 40px; height: 40px;"></div>
+                                <h3 class="card-title">Drug Law Enforcement</h3>
+                                <p class="card-description">Intercepting and seizing illicit drugs at borders, airports, seaports, and within Nigeria — bringing traffickers to justice and dismantling drug supply networks.</p>
+                            </div>
+                            <div class="dragon-value-card">
+                                <div class="card-icon"><img src="images/ndlea-logo.png" alt="NDLEA Logo" style="width: 40px; height: 40px;"></div>
+                                <h3 class="card-title">Prevention &amp; Awareness</h3>
+                                <p class="card-description">Educating communities, schools, and institutions on the dangers of drug abuse through sustained outreach campaigns, targeting especially the vulnerable youth population.</p>
+                            </div>
+                            <div class="dragon-value-card">
+                                <div class="card-icon"><img src="images/ndlea-logo.png" alt="NDLEA Logo" style="width: 40px; height: 40px;"></div>
+                                <h3 class="card-title">Treatment &amp; Rehabilitation</h3>
+                                <p class="card-description">Providing comprehensive care and rehabilitation support for drug-dependent individuals through NDLEA's network of counselling and treatment centres across the country.</p>
+                            </div>
+                            <div class="dragon-value-card">
+                                <div class="card-icon"><img src="images/ndlea-logo.png" alt="NDLEA Logo" style="width: 40px; height: 40px;"></div>
+                                <h3 class="card-title">International Cooperation</h3>
+                                <p class="card-description">Collaborating with global anti-drug agencies, including UNODC, INCB, DEA, and INTERPOL, to tackle transnational drug trafficking networks and uphold treaty obligations.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mascot-gallery-section">
+                        <h2>PHOTO GALLERY</h2>
+                        <p class="gallery-description">A visual record of NDLEA's leadership and operations — a legacy of service, sacrifice, and unwavering commitment to ridding Nigeria of illicit drug trafficking and abuse.</p>
+                        <div class="mascot-gallery">
+                            <div class="mascot-image-container">
+                                <img src="images/fulani.jpg" alt="CP. Fulani Kwajafa" class="mascot-gallery-image">
+                                <div class="image-overlay">
+                                    <div class="overlay-text">CP. Fulani Kwajafa</div>
+                                </div>
+                            </div>
+                            <div class="mascot-image-container">
+                                <img src="images/musa.jpg" alt="Maj. Gen. Musa Bamaiyi" class="mascot-gallery-image">
+                                <div class="image-overlay">
+                                    <div class="overlay-text">Maj. Gen. Musa Bamaiyi</div>
+                                </div>
+                            </div>
+                            <div class="mascot-image-container">
+                                <img src="images/ahmadu.jpg" alt="CP Ahmadu Giade" class="mascot-gallery-image">
+                                <div class="image-overlay">
+                                    <div class="overlay-text">CP Ahmadu Giade</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="history-section-card">
+                        <h2>5.</h2>
+                        <p>The National Drug Law Enforcement Agency remains Nigeria's foremost anti-narcotics institution, ceaselessly working to protect the Nigerian citizenry from the devastating effects of illicit drug trafficking and abuse. Over three decades since its establishment, NDLEA has evolved into a modern, intelligence-driven law enforcement institution with national and international reach. Its dedicated officers continue to demonstrate courage, professionalism, and sacrifice in the service of the nation. The Agency's motto — <em>"Ridding Society of Drug Abuse"</em> — encapsulates its enduring commitment to a safer, healthier, and drug-free Nigeria.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Image Modal for Full Size Viewing -->
+        <div id="imageModal" class="modal" onclick="closeModal()">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+                <img id="modalImage" src="" alt="">
+                <div class="modal-info">
+                    <h3 id="modalTitle"></h3>
+                    <p id="modalDescription"></p>
+                </div>
+                <div class="modal-navigation">
+                    <button class="nav-btn prev-btn" onclick="previousImage()" title="Previous Image">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button class="nav-btn next-btn" onclick="nextImage()" title="Next Image">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- BIOGRAPHY VIEW -->
+    <!-- ============================================ -->
+    <div id="biographyView" class="page-view">
+        <!-- Floating Back Button -->
+        <div class="floating-back-btn" onclick="showHomeView()" title="Back to Home">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M19 12H5M12 19L5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+
+        <main>
+            <section class="biography-section">
+                <!-- Reading Progress Bar -->
+                <div class="reading-progress-bar"></div>
+                
+                <div class="biography-layout">
+                    <div class="portrait-container">
+                        <div class="portrait-frame">
+                            <img id="commanderPortrait" src="" alt="Commander Portrait" class="commander-portrait">
+                            <div class="portrait-shine"></div>
+                        </div>
+                    </div>
+                    <div class="biography-text-container">
+                        <div class="biography-header">
+                            <h1 id="commanderName" class="commander-title"></h1>
+                        </div>
+                        <div class="service-period-wrapper">
+                            <p id="commanderService" class="commander-service-period"></p>
+                        </div>
+                        <div class="biography-text-box">
+                            <div class="text-box-header">
+                                <span class="header-icon">📜</span>
+                                <span class="header-text">BIOGRAPHY</span>
+                                <span class="header-icon">📜</span>
+                            </div>
+                            <p id="biographyText" class="typing-text"></p>
+                            <span class="typing-cursor" id="typingCursor">|</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
