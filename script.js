@@ -344,12 +344,15 @@ function startInfiniteScroll() {
             behavior: 'auto'
         });
         
-        // Check if we've scrolled to the bottom
-        const isAtBottom = wrapper.scrollHeight - wrapper.scrollTop - wrapper.clientHeight < 1;
-        
-        if (isAtBottom) {
-            // Reset to top for seamless loop
-            wrapper.scrollTop = 0;
+        // Seamless loop: once we've scrolled past 2 cycles, jump back by exactly
+        // one cycle. The content at the new position looks identical, so the
+        // teleport is invisible — works correctly regardless of dataset size.
+        if (oneSetHeight > 0 && wrapper.scrollTop >= oneSetHeight * 2) {
+            wrapper.scrollTop -= oneSetHeight;
+        } else if (oneSetHeight === 0) {
+            // Fallback: oneSetHeight not yet measured — use hard reset
+            const isAtBottom = wrapper.scrollHeight - wrapper.scrollTop - wrapper.clientHeight < 1;
+            if (isAtBottom) wrapper.scrollTop = 0;
         }
         
         scrollTimeout = setTimeout(scrollStep, 30); // Update every 30ms
@@ -605,6 +608,7 @@ let commandersData = [];
 let currentScrollPosition = 0;
 let isScrolling = false;
 let scrollInterval;
+let oneSetHeight = 0; // Height of exactly one cycle of cards — used for seamless looping
 
 // Populate commanders grid with infinite scrolling
 function populateCommanders() {
@@ -654,8 +658,11 @@ function populateCommanders() {
         commandersGrid.appendChild(commanderCard);
     }
     
-    // Initialize infinite scrolling
-    initializeInfiniteScroll();
+    // Measure one cycle's height after the DOM has rendered, then start scrolling
+    requestAnimationFrame(() => {
+        oneSetHeight = commandersGrid.scrollHeight / 4; // 4 cycles were rendered
+        initializeInfiniteScroll();
+    });
 }
 
 // Display biography with typing animation
