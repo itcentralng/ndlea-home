@@ -50,140 +50,6 @@ body {
 }
 
 /* Welcome Screen Styles */
-.welcome-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #7A0000 0%, #4D0000 50%, #1a0000 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10000;
-    transition: opacity 0.5s ease-out;
-}
-
-.welcome-content {
-    text-align: center;
-    animation: welcomeFadeIn 1s ease-out;
-}
-
-.welcome-logo {
-    width: 150px;
-    height: 150px;
-    object-fit: contain;
-    margin-bottom: 2rem;
-    animation: logoFloat 3s ease-in-out infinite;
-    filter: drop-shadow(0 10px 30px rgba(204, 0, 0, 0.3));
-}
-
-.welcome-title {
-    font-family: 'Oswald', sans-serif;
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--blue-ncs);
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    text-shadow: 0 4px 20px rgba(204, 0, 0, 0.5);
-}
-
-.welcome-subtitle {
-    font-family: 'Crimson Text', serif;
-    font-size: 1.5rem;
-    color: var(--cream);
-    margin-bottom: 3rem;
-    font-weight: 400;
-    letter-spacing: 1px;
-}
-
-.enter-button {
-    background: linear-gradient(135deg, var(--blue-ncs) 0%, var(--dark-blue-ncs) 100%);
-    color: var(--cream);
-    border: 2px solid var(--blue-ncs);
-    padding: 1rem 3rem;
-    font-size: 1.2rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    cursor: pointer;
-    border-radius: 50px;
-    display: inline-flex;
-    align-items: center;
-    gap: 1rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 10px 30px rgba(204, 0, 0, 0.3);
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-}
-
-.enter-button:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 15px 40px rgba(204, 0, 0, 0.5);
-    background: linear-gradient(135deg, var(--light-blue-ncs) 0%, var(--blue-ncs) 100%);
-}
-
-.enter-button:active {
-    transform: translateY(-1px) scale(1.02);
-}
-
-.enter-button svg {
-    transition: transform 0.3s ease;
-}
-
-.enter-button:hover svg {
-    transform: translateX(5px);
-}
-
-.welcome-note {
-    margin-top: 2rem;
-    color: var(--silver);
-    font-size: 0.9rem;
-    font-style: italic;
-    opacity: 0.7;
-}
-
-@keyframes welcomeFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes logoFloat {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
-}
-
-/* Responsive Welcome Screen */
-@media (max-width: 768px) {
-    .welcome-logo {
-        width: 120px;
-        height: 120px;
-    }
-    
-    .welcome-title {
-        font-size: 2rem;
-    }
-    
-    .welcome-subtitle {
-        font-size: 1.2rem;
-    }
-    
-    .enter-button {
-        padding: 0.8rem 2rem;
-        font-size: 1rem;
-    }
-}
-
 body {
     font-family: 'Crimson Text', serif;
     line-height: 1.6;
@@ -284,7 +150,7 @@ body::after {
     }
 }
 
-/* Video Background */
+/* Logo Spinning Background */
 .video-background {
     position: fixed;
     top: 0;
@@ -293,13 +159,31 @@ body::after {
     height: 100%;
     z-index: -2;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(ellipse at center,
+        rgba(40, 0, 0, 1) 0%,
+        rgba(10, 0, 0, 1) 70%,
+        rgba(0, 0, 0, 1) 100%);
+    perspective: 1200px;
 }
 
-.video-background video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.4) contrast(1.2) saturate(0.8);
+.video-background img {
+    width: 55vmin;
+    height: 55vmin;
+    object-fit: contain;
+    opacity: 0.12;
+    filter: grayscale(20%) contrast(1.1);
+    animation: bgLogoSpin 30s linear infinite;
+    transform-origin: center center;
+    pointer-events: none;
+    user-select: none;
+}
+
+@keyframes bgLogoSpin {
+    from { transform: rotateY(0deg); }
+    to   { transform: rotateY(360deg); }
 }
 
 /* Glass overlay for background tinting */

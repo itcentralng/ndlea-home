@@ -1,30 +1,3 @@
-// Background Audio and Welcome Screen
-let backgroundAudio = null;
-let welcomeScreen = null;
-
-// Initialize welcome screen and audio on page load
-window.addEventListener('DOMContentLoaded', () => {
-    backgroundAudio = document.getElementById('backgroundAudio');
-    welcomeScreen = document.getElementById('welcomeScreen');
-    const enterButton = document.getElementById('enterButton');
-    
-    // Handle enter button click
-    enterButton.addEventListener('click', () => {
-        // Play audio
-        backgroundAudio.play().then(() => {
-            console.log('Background audio started');
-        }).catch(error => {
-            console.log('Audio playback failed:', error);
-        });
-        
-        // Hide welcome screen with fade out animation
-        welcomeScreen.style.opacity = '0';
-        setTimeout(() => {
-            welcomeScreen.style.display = 'none';
-        }, 500);
-    });
-});
-
 // Commander data
 const commanders = [
     {
