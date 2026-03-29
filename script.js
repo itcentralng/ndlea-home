@@ -752,6 +752,84 @@ const directors = [
     }
 ];
 
+// ---- Gallery Data ----
+const galleryData = [
+    {
+        id: 'awards',
+        title: 'Awards',
+        basePath: 'images/gallery/Awards/',
+        images: [
+            { file: '1.jpg', caption: '' },
+            { file: '2.jpg', caption: 'Chairman/Chief Executive Officer of NDLEA, Brig Gen Mohamed Buba Marwa (Rtd) CON, OFR, at the 2025 Presidential Enabling Business Environment Council (PEBEC) Awards & Gala Night at the Presidential Villa’s Banquet Hall, receiving a special recognition award following NDLEA’s emergence as number two in the ranking of MDAs leading Nigeria’s ease of doing business reforms with an 89.3% score in outstanding performance in public sector reforms and excellence in implementing ease of doing business initiatives in 2025.' },
+            { file: '3.jpg', caption: 'Commendation / Award' }
+        ]
+    },
+    {
+        id: 'honlaf',
+        title: '31st HONLAF Meeting, Abuja 2023',
+        basePath: 'images/gallery/ONLAF Event/',
+        images: [
+            { file: '1.jpg', caption: 'Participants and delegates from various countries during a technical session at the 31st Meeting of Heads of National Drug Law Enforcement Agencies, Africa (HONLAF), held from 26th–29th September 2023 at Abuja Continental Hotel, Zone 4, Abuja.' },
+            { file: '2.jpg', caption: 'The Agency Secretary, National Drug Law Enforcement Agency, Barrister Shedrach Haruna (left), alongside the late former Director of Forensic and Chemical Monitoring, DCGN Ogundipe Olayinka Margaret, during a technical session presentation at the 31st Meeting of Heads of National Drug Law Enforcement Agencies, Africa (HONLAF), held from 26th–29th September 2023 at Abuja Continental Hotel, Zone 4, Abuja.' },
+            { file: '3.jpg', caption: 'The Vice President of the Federal Republic of Nigeria, Kashim Shettima, GCON (left), representing His Excellency, President Bola Ahmed Tinubu, GCFR, alongside the Chairman/Chief Executive Officer of the National Drug Law Enforcement Agency, Brig. Gen. Mohamed Buba Marwa (Rtd), at the recitation of the national anthem during the opening ceremony of the 31st Meeting of Heads of National Drug Law Enforcement Agencies, Africa (HONLAF), held from 26th–29th September 2023 at Abuja Continental Hotel, Zone 4, Abuja.' },
+            { file: '4.jpg', caption: 'Conference Secretary Regina Rohrbach (right) with the Chairman of the Conference and Chairman/Chief Executive Officer of the National Drug Law Enforcement Agency, Brig. Gen. Mohamed Buba Marwa (Rtd), during the Day Two technical session of the 31st Meeting of Heads of National Drug Law Enforcement Agencies, Africa (HONLAF), held from 26th–29th September 2023 at Abuja Continental Hotel, Zone 4, Abuja.' },
+            { file: '5.jpg', caption: 'Chairman of the Conference and Chairman/Chief Executive Officer of the National Drug Law Enforcement Agency, Brig. Gen. Mohamed Buba Marwa (Rtd), seated at the centre with key members of his management team and the NDLEA–HONLAF Planning Committee in a group photograph at the 31st Meeting of Heads of National Drug Law Enforcement Agencies, Africa (HONLAF), held from 26th–29th September 2023 at Abuja Continental Hotel, Zone 4, Abuja.' }
+        ]
+    },
+    {
+        id: 'june26',
+        title: 'June 26 UN International Day Against Drug Abuse',
+        basePath: 'images/gallery/June 26 UN Day Events/',
+        images: [
+            { file: '1.jpg', caption: '' },
+            { file: '2.jpg', caption: '' },
+            { file: '3.jpg', caption: '' },
+            { file: '4.jpg', caption: '' },
+            { file: '5.jpg', caption: '' },
+            { file: '6.jpg', caption: '' },
+            { file: '7.jpg', caption: '' },
+            { file: '8.jpg', caption: '' },
+            { file: '9.jpg', caption: '' },
+            { file: '10.jpg', caption: '' },
+            { file: '11.jpg', caption: '' },
+            { file: '12.jpg', caption: '' },
+            { file: '13.jpg', caption: '' }
+        ]
+    }
+];
+
+// ---- Gallery Render Functions ----
+function renderGalleryCategories() {
+    const container = document.getElementById('gallery-container');
+    if (!container) return;
+    const cards = galleryData.map(ev => `
+        <div class="ach-cat-card" onclick="galShowGallery('${ev.id}')">
+            <div class="ach-cat-title">${ev.title}</div>
+            <span class="ach-cat-badge">${ev.images.length} photos</span>
+        </div>
+    `).join('');
+    container.innerHTML = `<div class="ach-categories-grid">${cards}</div>`;
+}
+
+function galShowGallery(evId) {
+    const ev = galleryData.find(e => e.id === evId);
+    if (!ev) return;
+    achGalleryImages = ev.images.map(img => ({ src: ev.basePath + img.file, caption: img.caption }));
+    const container = document.getElementById('gallery-container');
+    if (!container) return;
+    const items = achGalleryImages.map((img, i) => `
+        <div class="ach-gallery-item" onclick="achOpenLightbox(${i})">
+            <img src="${img.src}" alt="" loading="lazy" onerror="this.parentElement.style.display='none'">
+            ${img.caption ? `<div class="ach-gallery-caption">${img.caption}</div>` : ''}
+        </div>
+    `).join('');
+    container.innerHTML = `
+        <button class="ach-back-btn" onclick="renderGalleryCategories()">&#8592; Back to Events</button>
+        <div class="ach-section-heading">${ev.title}</div>
+        <div class="ach-gallery-grid">${items}</div>
+    `;
+}
+
 // ---- Achievements Data ----
 const achievementsData = [
     {
@@ -1036,8 +1114,9 @@ const contentData = {
     },
     gallery: {
         title: 'GALLERY OF EVENTS',
+        subtitle: 'A photographic record of NDLEA\'s key events and milestones',
         icon: '📸',
-        body: 'This section features a curated photographic record of NDLEA\'s key events, high-level operations, drug seizure displays, inter-agency ceremonies, international summits, award presentations, and community outreach programmes. The gallery documents the Agency\'s proud institutional history through imagery.'
+        body: 'This section features a curated photographic record of NDLEA\'s key events, high-level operations, drug seizure displays, inter-agency ceremonies, international summits, award presentations, and community outreach programmes.'
     },
     infrastructure: {
         title: 'INFRASTRUCTURE DEVELOPMENT',
@@ -1196,6 +1275,17 @@ function showContentView(type) {
                 <div id="achievements-container"></div>
             `;
             renderAchievementsCategories();
+            return;
+        }
+
+        if (type === 'gallery') {
+            body.innerHTML = `
+                <div class="content-hero">
+                    <div class="content-hero-badge">${data.title}</div>
+                </div>
+                <div id="gallery-container"></div>
+            `;
+            renderGalleryCategories();
             return;
         }
 
