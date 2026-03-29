@@ -1119,7 +1119,7 @@ const contentData = {
         body: 'This section features a curated photographic record of NDLEA\'s key events, high-level operations, drug seizure displays, inter-agency ceremonies, international summits, award presentations, and community outreach programmes.'
     },
     infrastructure: {
-        title: 'INFRASTRUCTURE DEVELOPMENT',
+        title: 'NOTABLE INFRASTRUCTURE AND INSTITUTIONAL DEVELOPMENT',
         icon: '🏗',
         body: 'NDLEA has undertaken significant capital projects and infrastructural upgrades across its commands nationwide. These include the construction and renovation of zonal command headquarters, barracks, detention facilities, laboratories, and training centres. The current administration has accelerated infrastructure development to provide operatives with modern, fit-for-purpose workplaces and equipment.'
     }
