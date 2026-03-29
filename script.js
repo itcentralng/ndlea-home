@@ -774,12 +774,7 @@ const infrastructureData = [
             { file: '13.png', caption: '' },
             { file: '14.jpg', caption: 'Enugu Barracks' },
             { file: '15.jpg', caption: 'NHQ' },
-            { file: '16.png', caption: '' },
-            { file: '17.jpg', caption: '' },
-            { file: '18.jpg', caption: '' },
-            { file: '19.jpg', caption: '' },
-            { file: '20.jpg', caption: '' },
-            { file: '21.jpg', caption: '' }
+            
         ]
     },
     {
@@ -1276,135 +1271,68 @@ function showContentView(type) {
         if (!data) return;
 
         if (type === 'directors') {
-            const rows = directors.map((person, i) => `
-                <tr class="sa-row">
-                    <td class="sa-cell sa-cell-num">${i + 1}</td>
-                    <td class="sa-cell sa-cell-photo">
-                        <img src="${person.image}" alt="${person.name}" class="sa-photo" onerror="this.src='images/placeholder.jpg'">
-                    </td>
-                    <td class="sa-cell sa-cell-name">${person.name}</td>
-                    <td class="sa-cell sa-cell-office">${person.directorate}</td>
-                </tr>
+            const cards = directors.map(person => `
+                <div class="staff-card">
+                    <div class="staff-card-photo-wrap">
+                        <img src="${person.image}" alt="${person.name}" class="staff-card-photo" onerror="this.src='images/placeholder.jpg'">
+                    </div>
+                    <div class="staff-card-body">
+                        <div class="staff-card-name">${person.name}</div>
+                        <div class="staff-card-role">${person.directorate || ''}</div>
+                    </div>
+                </div>
             `).join('');
             body.innerHTML = `
                 <div class="content-hero">
                     <div class="content-hero-badge">${data.title}</div>
                     <p class="sa-roster-subtitle">${data.subtitle}</p>
                 </div>
-                <div class="sa-roster-wrap">
-                    <table class="sa-roster-table">
-                        <thead>
-                            <tr>
-                                <th class="sa-th sa-th-num">#</th>
-                                <th class="sa-th sa-th-photo">Photo</th>
-                                <th class="sa-th">Name</th>
-                                <th class="sa-th">Directorate</th>
-                            </tr>
-                        </thead>
-                        <tbody>${rows}</tbody>
-                    </table>
-                </div>
-            `;
-            return;
-        }
-
-        if (type === 'directors') {
-            const rows = directors.map((person, i) => `
-                <tr class="sa-row">
-                    <td class="sa-cell sa-cell-num">${i + 1}</td>
-                    <td class="sa-cell sa-cell-photo">
-                        <img src="${person.image}" alt="${person.name}" class="sa-photo" onerror="this.src='images/placeholder.jpg'">
-                    </td>
-                    <td class="sa-cell sa-cell-name">${person.name}</td>
-                    <td class="sa-cell sa-cell-office">${person.directorate}</td>
-                </tr>
-            `).join('');
-            body.innerHTML = `
-                <div class="content-hero">
-                    <div class="content-hero-badge">${data.title}</div>
-                    <p class="sa-roster-subtitle">${data.subtitle}</p>
-                </div>
-                <div class="sa-roster-wrap">
-                    <table class="sa-roster-table">
-                        <thead>
-                            <tr>
-                                <th class="sa-th sa-th-num">#</th>
-                                <th class="sa-th sa-th-photo">Photo</th>
-                                <th class="sa-th">Name</th>
-                                <th class="sa-th">Directorate</th>
-                            </tr>
-                        </thead>
-                        <tbody>${rows}</tbody>
-                    </table>
-                </div>
+                <div class="staff-grid staff-grid--5">${cards}</div>
             `;
             return;
         }
 
         if (type === 'secretary') {
-            const rows = agencySecretaries.map((person, i) => `
-                <tr class="sa-row">
-                    <td class="sa-cell sa-cell-num">${i + 1}</td>
-                    <td class="sa-cell sa-cell-photo">
-                        <img src="${person.image}" alt="${person.name}" class="sa-photo" onerror="this.src='images/placeholder.jpg'">
-                    </td>
-                    <td class="sa-cell sa-cell-name">${person.name}</td>
-                    <td class="sa-cell sa-cell-period">${person.period || '—'}</td>
-                </tr>
+            const cards = agencySecretaries.map(person => `
+                <div class="staff-card">
+                    <div class="staff-card-photo-wrap">
+                        <img src="${person.image}" alt="${person.name}" class="staff-card-photo" onerror="this.src='images/placeholder.jpg'">
+                    </div>
+                    <div class="staff-card-body">
+                        <div class="staff-card-name">${person.name}</div>
+                        <div class="staff-card-period">${person.period || ''}</div>
+                    </div>
+                </div>
             `).join('');
             body.innerHTML = `
                 <div class="content-hero">
                     <div class="content-hero-badge">${data.title}</div>
                     <p class="sa-roster-subtitle">${data.subtitle}</p>
                 </div>
-                <div class="sa-roster-wrap">
-                    <table class="sa-roster-table">
-                        <thead>
-                            <tr>
-                                <th class="sa-th sa-th-num">#</th>
-                                <th class="sa-th sa-th-photo">Photo</th>
-                                <th class="sa-th">Name</th>
-                                <th class="sa-th">Tenure</th>
-                            </tr>
-                        </thead>
-                        <tbody>${rows}</tbody>
-                    </table>
-                </div>
+                <div class="staff-grid staff-grid--3">${cards}</div>
             `;
             return;
         }
 
         if (type === 'assistants') {
-            const rows = specialAssistants.map((person, i) => `
-                <tr class="sa-row">
-                    <td class="sa-cell sa-cell-num">${i + 1}</td>
-                    <td class="sa-cell sa-cell-photo">
-                        <img src="${person.image}" alt="${person.name}" class="sa-photo" onerror="this.src='images/placeholder.jpg'">
-                    </td>
-                    <td class="sa-cell sa-cell-name">${person.name}</td>
-                    <td class="sa-cell sa-cell-office">${person.office}</td>
-                    <td class="sa-cell sa-cell-period">${person.period || '—'}</td>
-                </tr>
+            const cards = specialAssistants.map(person => `
+                <div class="staff-card">
+                    <div class="staff-card-photo-wrap">
+                        <img src="${person.image}" alt="${person.name}" class="staff-card-photo" onerror="this.src='images/placeholder.jpg'">
+                    </div>
+                    <div class="staff-card-body">
+                        <div class="staff-card-name">${person.name}</div>
+                        <div class="staff-card-role">${person.office || ''}</div>
+                        <div class="staff-card-period">${person.period || ''}</div>
+                    </div>
+                </div>
             `).join('');
             body.innerHTML = `
                 <div class="content-hero">
                     <div class="content-hero-badge">${data.title}</div>
                     <p class="sa-roster-subtitle">${data.subtitle}</p>
                 </div>
-                <div class="sa-roster-wrap">
-                    <table class="sa-roster-table">
-                        <thead>
-                            <tr>
-                                <th class="sa-th sa-th-num">#</th>
-                                <th class="sa-th sa-th-photo">Photo</th>
-                                <th class="sa-th">Name</th>
-                                <th class="sa-th">Office</th>
-                                <th class="sa-th">Period</th>
-                            </tr>
-                        </thead>
-                        <tbody>${rows}</tbody>
-                    </table>
-                </div>
+                <div class="staff-grid staff-grid--4">${cards}</div>
             `;
             return;
         }
@@ -1603,53 +1531,37 @@ function goToBiographyWithTransition(commanderId) {
 function populateCurrentGocBiography() {
     const currentGocBiography = document.getElementById('currentGocBiography');
     if (!currentGocBiography) return;
-    
-    // Get the current (last) commander
+
     const currentCommander = commanders[commanders.length - 1];
-    
-    // Create decorations display if available
-    const decorationsHtml = currentCommander.decorations && currentCommander.decorations.trim() !== '' 
-        ? `<div class="commander-decorations">
-            <div class="decorations-list">${currentCommander.decorations.toUpperCase()}</div>
-           </div>` 
+
+    // Decorations badge
+    const decorationsHtml = currentCommander.decorations && currentCommander.decorations.trim() !== ''
+        ? `<div class="home-ceo-decorations">${currentCommander.decorations}</div>`
         : '';
 
-    // Format biography text to preserve line breaks
-    const formattedBiography = currentCommander.biography.replace(/\n/g, '<br>');
-    
-    // Create biography layout with name, service period, and decorations under portrait
+    // Bio excerpt: first paragraph or first 480 chars
+    const rawBio = currentCommander.biography || '';
+    const firstPara = rawBio.split(/\n\n+/)[0].trim();
+    const bioSnippet = firstPara.length > 480 ? firstPara.slice(0, 480).replace(/\s+\S+$/, '') + '…' : firstPara;
+
     currentGocBiography.innerHTML = `
-        <div class="portrait-container">
-            <div class="portrait-frame">
-                <img src="${currentCommander.image}" alt="${currentCommander.name}" class="commander-portrait" onerror="this.src='images/placeholder.jpg'">
-                <div class="portrait-shine"></div>
-            </div>
-            <div class="portrait-info">
-                <h2 class="commander-title">${currentCommander.name}</h2>
+        <div class="home-ceo-label">Current Chairman / CEO</div>
+        <div class="home-ceo-portrait-row">
+            <img src="${currentCommander.image}" alt="${currentCommander.name}" class="home-ceo-portrait" onerror="this.src='images/placeholder.jpg'">
+            <div class="home-ceo-info">
+                <div class="home-ceo-name">${currentCommander.name}</div>
+                <div class="home-ceo-period">${currentCommander.yearOfService}</div>
                 ${decorationsHtml}
-                <p class="commander-service-period">${currentCommander.yearOfService}</p>
             </div>
         </div>
-        <div class="biography-text-container">
-            <div class="biography-text-box">
-                
-                <div class="biography-text">${formattedBiography}</div>
-            </div>
-        </div>
+        <div class="home-ceo-bio"><p>${bioSnippet}</p></div>
+        <div class="home-ceo-view-btn">View Full Profile →</div>
     `;
-    
-    // Add click event to go to full biography page
+
+    currentGocBiography.style.cursor = 'pointer';
     currentGocBiography.addEventListener('click', function() {
         showBiographyView(currentCommander.id);
     });
-    
-    // Add hover effect
-    currentGocBiography.addEventListener('mouseenter', function() {
-        triggerHoverColorEffect(this);
-    });
-    
-    // Make it look clickable
-    currentGocBiography.style.cursor = 'pointer';
 }
 
 // Infinite scroll variables
@@ -2008,22 +1920,22 @@ document.addEventListener('DOMContentLoaded', function() {
 // Mascot Gallery Data
 const mascotImages = [
     {
-        src: 'images/fulani.jpg',
+        src: 'images/cceos/fulani.jpg',
         title: 'CP. Fulani Kwajafa (Rtd)',
         description: '2nd Chairman/CEO of NDLEA — 10th March 1991 to 25th October 1993. Under his leadership, NDLEA expanded its operational reach across Nigeria.'
     },
     {
-        src: 'images/musa.jpg',
+        src: 'images/cceos/musa.jpg',
         title: 'Maj. Gen. Musa Bamaiyi mni',
         description: '4th Chairman/CEO of NDLEA — 26th April 1994 to 23rd December 1998. One of the longest-serving Chairmen, credited with significantly strengthening the Agency.'
     },
     {
-        src: 'images/ahmadu.jpg',
+        src: 'images/cceos/ahmadu.jpg',
         title: 'CP Ahmadu Giade',
         description: '8th Chairman/CEO of NDLEA — 24th November 2005 to 22nd November 2015. Served for a decade, the longest tenure in NDLEA\'s history.'
     },
     {
-        src: 'images/marwa.jpg',
+        src: 'images/cceos/marwa.jpg',
         title: 'Brig. Gen. MB Marwa (rtd) CON, OFR',
         description: 'Current Chairman/CEO of NDLEA since January 2021. Under his leadership, NDLEA has recorded unprecedented drug seizures and operational successes.'
     }
