@@ -1539,10 +1539,11 @@ function populateCurrentGocBiography() {
         ? `<div class="home-ceo-decorations">${currentCommander.decorations}</div>`
         : '';
 
-    // Bio excerpt: first paragraph or first 480 chars
+    // Bio excerpt: skip heading-only lines (all-caps / short), find first prose paragraph
     const rawBio = currentCommander.biography || '';
-    const firstPara = rawBio.split(/\n\n+/)[0].trim();
-    const bioSnippet = firstPara.length > 480 ? firstPara.slice(0, 480).replace(/\s+\S+$/, '') + '…' : firstPara;
+    const paragraphs = rawBio.split(/\n\n+/).map(p => p.trim()).filter(Boolean);
+    const prosePara = paragraphs.find(p => p.length > 80 && !/^[A-Z0-9\s\.\(\)\/\-,&']+$/.test(p)) || paragraphs[0] || '';
+    const bioSnippet = prosePara.length > 500 ? prosePara.slice(0, 500).replace(/\s+\S+$/, '') + '…' : prosePara;
 
     currentGocBiography.innerHTML = `
         <div class="home-ceo-label">Current Chairman / CEO</div>
@@ -1555,13 +1556,8 @@ function populateCurrentGocBiography() {
             </div>
         </div>
         <div class="home-ceo-bio"><p>${bioSnippet}</p></div>
-        <div class="home-ceo-view-btn">View Full Profile →</div>
+        <button class="home-ceo-view-btn" onclick="showBiographyView(${currentCommander.id})">View Full Profile →</button>
     `;
-
-    currentGocBiography.style.cursor = 'pointer';
-    currentGocBiography.addEventListener('click', function() {
-        showBiographyView(currentCommander.id);
-    });
 }
 
 // Infinite scroll variables

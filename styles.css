@@ -348,6 +348,9 @@ body {
 }
 
 .home-ceo-view-btn {
+    appearance: none;
+    display: block;
+    width: calc(100% - var(--s6) * 2);
     align-self: flex-end;
     margin: 0 var(--s6) var(--s5);
     padding: var(--s2) var(--s5);
