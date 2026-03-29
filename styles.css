@@ -35,14 +35,14 @@
     --f-heading: 'Oswald', 'Arial Narrow', sans-serif;
     --f-serif:   'Crimson Text', 'Georgia', serif;
     --f-display: 'Playfair Display', 'Georgia', serif;
-    --fs-xs:   0.68rem;
-    --fs-sm:   0.78rem;
-    --fs-base: 0.88rem;
-    --fs-md:   1.0rem;
-    --fs-lg:   1.15rem;
-    --fs-xl:   1.4rem;
-    --fs-2xl:  1.8rem;
-    --fs-3xl:  2.4rem;
+    --fs-xs:   0.78rem;
+    --fs-sm:   0.90rem;
+    --fs-base: 1.0rem;
+    --fs-md:   1.12rem;
+    --fs-lg:   1.28rem;
+    --fs-xl:   1.55rem;
+    --fs-2xl:  2.0rem;
+    --fs-3xl:  2.6rem;
     --fs-4xl:  3.0rem;
     --s1:  4px;  --s2:  8px;  --s3: 12px;  --s4: 16px;
     --s5: 20px;  --s6: 24px;  --s8: 32px;  --s10: 40px;
@@ -336,7 +336,9 @@ body {
     font-size: var(--fs-sm);
     line-height: 1.75;
     color: var(--text-dim);
+    margin: 0 0 var(--s4);
 }
+.home-ceo-bio p:last-child { margin-bottom: 0; }
 
 .home-ceo-bio::after {
     content: '';
@@ -349,8 +351,6 @@ body {
 
 .home-ceo-view-btn {
     appearance: none;
-    display: block;
-    width: calc(100% - var(--s6) * 2);
     align-self: flex-end;
     margin: 0 var(--s6) var(--s5);
     padding: var(--s2) var(--s5);

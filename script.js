@@ -1539,11 +1539,11 @@ function populateCurrentGocBiography() {
         ? `<div class="home-ceo-decorations">${currentCommander.decorations}</div>`
         : '';
 
-    // Bio excerpt: skip heading-only lines (all-caps / short), find first prose paragraph
+    // Bio excerpt: skip heading-only lines (all-caps / short), collect first two prose paragraphs in full
     const rawBio = currentCommander.biography || '';
     const paragraphs = rawBio.split(/\n\n+/).map(p => p.trim()).filter(Boolean);
-    const prosePara = paragraphs.find(p => p.length > 80 && !/^[A-Z0-9\s\.\(\)\/\-,&']+$/.test(p)) || paragraphs[0] || '';
-    const bioSnippet = prosePara.length > 500 ? prosePara.slice(0, 500).replace(/\s+\S+$/, '') + '…' : prosePara;
+    const proseParas = paragraphs.filter(p => p.length > 80 && !/^[A-Z0-9\s\.\(\)\/\-,&']+$/.test(p));
+    const bioSnippetHtml = proseParas.slice(0, 2).map(p => `<p>${p}</p>`).join('') || `<p>${paragraphs[0] || ''}</p>`;
 
     currentGocBiography.innerHTML = `
         <div class="home-ceo-label">Current Chairman / CEO</div>
@@ -1555,7 +1555,7 @@ function populateCurrentGocBiography() {
                 ${decorationsHtml}
             </div>
         </div>
-        <div class="home-ceo-bio"><p>${bioSnippet}</p></div>
+        <div class="home-ceo-bio">${bioSnippetHtml}</div>
         <button class="home-ceo-view-btn" onclick="showBiographyView(${currentCommander.id})">View Full Profile →</button>
     `;
 }
