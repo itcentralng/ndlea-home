@@ -60,11 +60,109 @@
                     </div>
                 </section>
                 
-                <!-- Commanders Grid -->
-                <div class="commanders-grid-wrapper">
-                    <div class="commanders-grid" id="commandersGrid">
-                        <!-- Commanders will be populated by JavaScript -->
+                <!-- Navigation Cards Section -->
+                <div class="nav-cards-section">
+
+                    <!-- Row 1: Past CEOs — standalone -->
+                    <div class="cards-row row-solo">
+                        <div class="nav-card" onclick="showPastCeosView()">
+                            <div class="nav-card-icon-wrap">
+                                <svg width="44" height="44" viewBox="0 0 24 24" fill="none">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="nav-card-body">
+                                <div class="nav-card-title">PROFILES OF PAST &amp; PRESENT CHAIRMEN / CEOs</div>
+                                <div class="nav-card-desc">Leadership has remained central to the growth, operational effectiveness, and institutional character of NDLEA. Successive Chairmen/CEOs have led the Agency through different phases of development — from take-off and consolidation to reform, expansion, and modernisation.</div>
+                            </div>
+                            <div class="nav-card-chevron">
+                                <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+                                    <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- Row 2: Agency Secretary | Special Assistants | Directors -->
+                    <div class="cards-row row-triple">
+                        <div class="nav-card card-vertical" onclick="showContentView('secretary')">
+                            <div class="nav-card-icon-wrap">
+                                <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <div class="nav-card-title">AGENCY SECRETARIES</div>
+                            <div class="nav-card-desc">Office of the NDLEA Agency Secretaries</div>
+                        </div>
+                        <div class="nav-card card-vertical" onclick="showContentView('assistants')">
+                            <div class="nav-card-icon-wrap">
+                                <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="nav-card-title">SPECIAL ASSISTANTS</div>
+                            <div class="nav-card-desc">Office of the NDLEA Special Assistants</div>
+                        </div>
+                        <div class="nav-card card-vertical" onclick="showContentView('directors')">
+                            <div class="nav-card-icon-wrap">
+                                <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <polyline points="9 22 9 12 15 12 15 22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="nav-card-title">DIRECTORS</div>
+                            <div class="nav-card-desc">NDLEA directorate structure, department heads and their portfolios</div>
+                        </div>
+                    </div>
+
+                    <!-- Row 3: Achievements | Gallery of Events -->
+                    <div class="cards-row row-double">
+                        <div class="nav-card card-vertical" onclick="showContentView('achievements')">
+                            <div class="nav-card-icon-wrap">
+                                <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="nav-card-title">ACHIEVEMENTS</div>
+                            <div class="nav-card-desc">Key milestones, record-breaking drug seizures, and institutional successes of NDLEA</div>
+                        </div>
+                        <div class="nav-card card-vertical" onclick="showContentView('gallery')">
+                            <div class="nav-card-icon-wrap">
+                                <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="8.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="2"/>
+                                    <polyline points="21 15 16 10 5 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="nav-card-title">GALLERY OF EVENTS</div>
+                            <div class="nav-card-desc">A curated photographic record of NDLEA events, operations, and ceremonies</div>
+                        </div>
+                    </div>
+
+                    <!-- Row 4: Infrastructure Development — standalone -->
+                    <div class="cards-row row-solo">
+                        <div class="nav-card" onclick="showContentView('infrastructure')">
+                            <div class="nav-card-icon-wrap">
+                                <svg width="44" height="44" viewBox="0 0 24 24" fill="none">
+                                    <path d="M2 20h20M4 20V10l8-7 8 7v10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M9 20V14h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="nav-card-body">
+                                <div class="nav-card-title">INFRASTRUCTURE DEVELOPMENT</div>
+                                <div class="nav-card-desc">Capital projects, facility upgrades, and institutional capacity building initiatives across all NDLEA commands nationwide</div>
+                            </div>
+                            <div class="nav-card-chevron">
+                                <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+                                    <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </section>
         </main>
@@ -242,14 +340,73 @@
                         </div>
                         <div class="biography-text-box">
                             <div class="text-box-header">
-                                <span class="header-icon">📜</span>
                                 <span class="header-text">BIOGRAPHY</span>
-                                <span class="header-icon">📜</span>
                             </div>
                             <p id="biographyText" class="typing-text"></p>
                             <span class="typing-cursor" id="typingCursor">|</span>
                         </div>
                     </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- PAST CEOs VIEW -->
+    <!-- ============================================ -->
+    <div id="pastCeosView" class="page-view">
+        <!-- Floating Back Button -->
+        <div class="floating-back-btn" onclick="showHomeView()" title="Back to Home">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M19 12H5M12 19L5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+
+        <!-- Floating Logo -->
+        <div class="floating-logo" onclick="showHomeView()" title="NDLEA - Home">
+            <img src="images/ndlea-logo.png" alt="NDLEA Logo">
+        </div>
+
+        <div class="past-ceos-layout">
+            <!-- LEFT SIDEBAR -->
+            <aside class="ceos-sidebar">
+                <div class="ceos-sidebar-header">
+                    <h2>PAST CHAIRMEN / CEOs</h2>
+                    <div class="ceos-sidebar-intro">Profiles of Past &amp; Present Chairmen/Chief Executive Officers</div>
+                    <div class="ceos-sidebar-count" id="ceosSidebarCount"></div>
+                </div>
+                <div class="ceos-sidebar-list" id="ceosSidebarList">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </aside>
+
+            <!-- RIGHT DETAIL PANEL -->
+            <div class="ceos-detail-panel" id="ceosDetailPanel">
+                <!-- Populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CONTENT VIEW (Agency Secretary, Assistants, Directors, Achievements, Gallery, Infrastructure) -->
+    <!-- ============================================ -->
+    <div id="contentView" class="page-view">
+        <!-- Floating Back Button -->
+        <div class="floating-back-btn" onclick="showHomeView()" title="Back to Home">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M19 12H5M12 19L5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+
+        <!-- Floating Logo -->
+        <div class="floating-logo" onclick="showHomeView()" title="NDLEA - Home">
+            <img src="images/ndlea-logo.png" alt="NDLEA Logo">
+        </div>
+
+        <main>
+            <section class="content-detail-section">
+                <div id="contentViewBody">
+                    <!-- Populated by JavaScript -->
                 </div>
             </section>
         </main>

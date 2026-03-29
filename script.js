@@ -2,80 +2,154 @@
 const commanders = [
     {
         id: 1,
-        name: "DIG FIDELIS OYAKHILOME mni",
-        image: "images/fidelis.jpg",
+        name: "DIG FIDELIS OYAKHILOME, mni (Rtd.)",
+        image: "images/cceos/fidelis.jpg",
         yearOfService: "12th January, 1990 – 10th March, 1991",
         decorations: "mni",
-        biography: "DIG Fidelis Oyakhilome mni was the pioneer Chairman/Chief Executive of the National Drug Law Enforcement Agency (NDLEA). He was appointed to lead the newly established Agency following its creation by Decree No. 48 of December 1989 during the administration of General Ibrahim Babangida, GCFR. As the founding Chairman, he was instrumental in building the institutional framework and operational structures that would define NDLEA's approach to drug law enforcement in Nigeria.\n\nUnder his leadership, the Agency established its initial command and control structures, embarked on nationwide sensitization campaigns, and commenced operations at key entry points across the country. He recruited the pioneer workforce of the Agency and facilitated the establishment of its headquarters and offices nationwide.\n\nDIG Oyakhilome's pioneering efforts laid the solid foundation upon which subsequent administrations would build. His commitment to the ideals of drug-free Nigeria set the tone for the Agency's institutional culture of professionalism and public service."
+        biography: "Deputy Inspector General Fidelis Oyakhilome, mni, occupies a significant place in the institutional history of the National Drug Law Enforcement Agency as one of the pioneering leaders who presided over the formative stage of the Agency's development. His appointment as the pioneer Chairman/Chief Executive Officer came shortly after the establishment of the NDLEA under Decree No. 48 of 1989, at a time when Nigeria was seeking to strengthen its response to the growing global challenge of illicit drug trafficking.\n\nOyakhilome brought to the office a rich combination of experience drawn from law enforcement, governance, and legal practice. Prior to his appointment, he had built a distinguished career in the Nigeria Police Force, rising through the ranks to become a Deputy Inspector General of Police. His professional exposure also extended into public administration, having served as Military Governor of Rivers State, where he gained valuable experience in governmental leadership and policy implementation.\n\nHis background as a trained legal practitioner, senior police officer, and public administrator positioned him to handle the delicate responsibility of translating the provisions of the newly enacted law establishing the NDLEA into an operational national institution.",
+        achievements: [
+            "Supervised the operational take-off of NDLEA",
+            "Established foundational administrative and enforcement structures",
+            "Led arrest of Nigeria's first drug baron (Greg Odilibe)",
+            "Facilitated extradition of a high-profile trafficker to the United States"
+        ]
     },
     {
         id: 2,
-        name: "CP. FULANI KWAJAFA (Rtd)",
-        image: "images/fulani.jpg",
+        name: "CP. FULANI KWAJAFA (Rtd.)",
+        image: "images/cceos/fulani.jpg",
         yearOfService: "10th March, 1991 – 25th October, 1993",
         decorations: "",
-        biography: "CP Fulani Kwajafa (Rtd) served as Chairman/Chief Executive of the National Drug Law Enforcement Agency (NDLEA) from March 1991 to October 1993. A distinguished police officer of considerable experience, CP Kwajafa brought significant law enforcement expertise to the Agency's leadership during a formative period in its institutional development.\n\nUnder his leadership, the Agency significantly expanded its operational reach across Nigeria, strengthening enforcement capabilities at airports, seaports, and land border posts. He championed inter-agency collaboration with the Nigeria Police Force, Nigerian Customs Service, and other security agencies, laying the groundwork for a coordinated national anti-drug strategy.\n\nHis tenure was marked by increased seizures of illicit substances and the establishment of NDLEA's presence in additional states across the country. CP Kwajafa also deepened the Agency's public awareness programmes, reaching out to schools, communities, and religious institutions to educate Nigerians on the dangers of drug abuse."
+        biography: "Fulani Kwajafa, a distinguished Commissioner of Police (Rtd.), was one of the early leaders who helped consolidate the National Drug Law Enforcement Agency during its formative years. Having built a reputable career within the Nigeria Police Force, he was widely recognized for his professionalism, administrative competence, and operational experience in law enforcement. His appointment as Chairman/Chief Executive Officer of the NDLEA came at a time when the Agency was gradually transitioning from its foundational stage into a more structured and operational national institution.\n\nKwajafa's leadership extended beyond national boundaries. His expertise in narcotics control and law enforcement diplomacy earned him international recognition, culminating in his election in 1993 as the first African to serve as Chairman of the United Nations Commission on Narcotic Drugs (CND). This remarkable achievement not only elevated his personal standing but also significantly enhanced Nigeria's visibility and credibility in global discussions on narcotics control and international drug policy.\n\nHis tenure at the NDLEA is therefore remembered as a period during which the Agency strengthened its operational presence, broadened its institutional networks, and began to gain recognition within the international drug enforcement community.",
+        achievements: [
+            "Expanded NDLEA formations across Nigeria",
+            "Relocated headquarters to Ikoyi, Lagos",
+            "Became first African Chairman of the UN Commission on Narcotic Drugs (1993)",
+            "Oversaw major heroin seizure at Apapa Port"
+        ]
     },
     {
         id: 3,
-        name: "AIG. BA'PPA JAMA'RE mni",
-        image: "images/bappa.jpg",
+        name: "AIG. BA'PPA JAMA'RE, mni",
+        image: "images/cceos/bappa.jpg",
         yearOfService: "25th October, 1993 – 13th February, 1994",
         decorations: "mni",
-        biography: "AIG Ba'ppa Jama're mni served as Chairman/Chief Executive of the National Drug Law Enforcement Agency (NDLEA) from October 1993 to February 1994. A senior police officer of distinction, he brought considerable law enforcement experience to the Agency's leadership.\n\nThough his tenure was brief, he maintained the professional standards and operational tempo established by his predecessors, ensuring continuity in the Agency's mandate to rid Nigeria of illicit drug trafficking and abuse. He oversaw the smooth administration of the Agency during this transitional period and ensured the uninterrupted execution of ongoing enforcement operations.\n\nHis administrative acumen and law enforcement experience contributed significantly to the stability and direction of the Agency during his period in office. AIG Jama're's dedication to the Agency's ideals and his personal commitment to professionalism in public service left a lasting mark on NDLEA's institutional character."
+        biography: "Assistant Inspector General of Police Ba'ppa Jama're, mni, was an accomplished law enforcement professional whose career in the Nigeria Police Force was marked by years of dedicated service, operational experience, and administrative leadership. Rising through the ranks to become an Assistant Inspector General of Police, he earned recognition as a disciplined officer with a strong understanding of policing strategy, security coordination, and institutional management.\n\nHis appointment as Chairman/Chief Executive Officer of the National Drug Law Enforcement Agency came during a delicate period in the Agency's early development. At the time, the NDLEA was still consolidating the operational structures and administrative frameworks that had been established in the years immediately following its creation in 1989. Jama're's leadership therefore occurred within a transitional phase in which the Agency needed continuity, stability, and sustained enforcement activity while navigating changes in leadership.\n\nAlthough his tenure was relatively brief, his administration played an important role in maintaining the operational momentum of the Agency and safeguarding the institutional structures already put in place during the formative years of the NDLEA.",
+        achievements: [
+            "Nigeria recorded a landmark seizure of 270kg of heroin at Apapa seaport involving a major drug baron Brown Akubueze",
+            "Maintained stability during international diplomatic pressure",
+            "Preserved operational structures and discipline",
+            "Legacy: Stability and continuity during a challenging national period"
+        ]
     },
     {
         id: 4,
-        name: "MAJ. GEN. MUSA BAMAIYI mni",
-        image: "images/musa.jpg",
+        name: "MAJ. GEN. MUSA BAMAIYI, mni",
+        image: "images/cceos/musa.jpg",
         yearOfService: "26th April, 1994 – 23rd December, 1998",
         decorations: "mni",
-        biography: "Maj. Gen. Musa Bamaiyi mni served as Chairman/Chief Executive of the National Drug Law Enforcement Agency (NDLEA) for over four years — one of the longest tenures in the Agency's history at that time. A senior military officer of distinction, General Bamaiyi brought operational discipline and strategic vision to the Agency during a critical period of its development.\n\nUnder his tenure, NDLEA substantially increased its capacity for drug interdiction, recorded landmark seizures of hard drugs at all major points of entry into Nigeria, and expanded its intelligence-gathering and analysis capabilities. He oversaw the recruitment and training of additional personnel, and modernised the Agency's operational infrastructure.\n\nGeneral Bamaiyi also strengthened NDLEA's bilateral and multilateral relationships with international anti-drug agencies, positioning Nigeria as a key partner in the global war against narcotics. He deepened collaboration with the United Nations Drug Control Programme (UNDCP), INTERPOL, and bilateral partners across Africa, Europe, and the Americas.\n\nHis administration was widely commended for its firmness, professionalism, and the significant operational successes recorded during his tenure. General Bamaiyi's leadership is credited with elevating NDLEA to a higher level of operational effectiveness and institutional maturity."
+        biography: "Major General Musa Bamaiyi served as Chairman/Chief Executive Officer of the National Drug Law Enforcement Agency during a critical period in the Agency's institutional development. His tenure coincided with a time when Nigeria was increasingly under international scrutiny due to the activities of drug trafficking networks operating within and through the country. Consequently, the responsibility placed upon the NDLEA during this period was particularly demanding, requiring strong leadership, decisive enforcement strategies, and a clear demonstration of Nigeria's commitment to combating narcotics trafficking.\n\nAs a senior officer of the Nigerian Army, Major General Bamaiyi brought to the Agency a leadership style characterized by discipline, strategic planning, and operational decisiveness. His military background influenced the administrative and operational culture of the NDLEA during his tenure, emphasizing structured command systems, rigorous enforcement operations, and enhanced surveillance of suspected trafficking activities.\n\nUnder his leadership, the Agency worked to reinforce its enforcement capacity and project a stronger institutional presence in the fight against illicit drugs both within Nigeria and in collaboration with international partners. It is worthy to note that on the 13th February 1994, Maj. Gen. M. M. Bamaiyi, mni was first appointed as Chairman, Task Force before his confirmation as CCEO on the 26th April 1994.",
+        achievements: [
+            "Introduced Operation \"Burn the Weeds\"",
+            "Established 15 Zonal Commands across Nigeria",
+            "Enforced the Money Laundering Decree (1995)",
+            "Targeted drug barons and illicit financial networks",
+            "Established Drug Free Clubs in schools nationwide",
+            "Acquired Party secretariat facilities across the country and constructed Exhibit and Detention facilities in Kano, Zaria, Calabar, Nasarawa and other states"
+        ]
     },
     {
         id: 5,
-        name: "AIG. OGBONNAYA ONOVO",
-        image: "images/ogbonnaya.jpg",
+        name: "CP OGBONNAYA ONOVO",
+        image: "images/cceos/ogbonnaya.jpg",
         yearOfService: "23rd December, 1998 – 3rd May, 2000",
         decorations: "",
-        biography: "AIG Ogbonnaya Onovo served as Chairman/Chief Executive of the National Drug Law Enforcement Agency (NDLEA) from December 1998 to May 2000. A distinguished police officer, AIG Onovo brought significant law enforcement expertise and operational experience to the Agency's leadership.\n\nHis tenure was marked by a sustained crackdown on drug trafficking networks operating across Nigeria's borders and within the country's major cities. He prioritised intelligence-driven operations and strengthened cooperation between NDLEA and the Nigeria Police Force, resulting in several high-profile arrests and prosecutions of major drug syndicates.\n\nAIG Onovo also championed demand reduction initiatives, working with state governments and civil society organisations to address the root causes of drug abuse among the Nigerian populace. He expanded the Agency's treatment and rehabilitation outreach, ensuring that drug-dependent individuals had access to support and care.\n\nHis commitment to professionalism and his emphasis on building a results-driven culture within NDLEA contributed meaningfully to the Agency's continued growth during his period of leadership."
+        biography: "Mr. Ogbonnaya Onovo served as Chairman/Chief Executive Officer of the National Drug Law Enforcement Agency during a particularly significant period in Nigeria's political history. His tenure coincided with the country's historic transition from military rule to democratic governance in 1999, a moment that required stability and continuity within many national institutions, including key security and law enforcement agencies.\n\nA seasoned law enforcement professional, Onovo brought extensive policing experience to the leadership of the NDLEA. His professional background within the Nigeria Police Force had equipped him with strong operational knowledge in criminal investigation, security coordination, and institutional administration. These skills proved valuable at a time when the Agency needed to maintain its operational effectiveness while the broader national governance system was undergoing major transformation.\n\nAlthough his time at the helm of the Agency was relatively brief, his leadership contributed to ensuring that the NDLEA remained focused on its statutory mandate of combating drug trafficking and abuse, even as Nigeria navigated a new political era.",
+        achievements: [
+            "Sustained operations during Nigeria's historic transition to democratic governance",
+            "Abolition of the Miscellaneous Offences Tribunal, transferring drug prosecution to the Federal High Court",
+            "Achieved U.S. drug certification for Nigeria",
+            "Conducted Rapid Situation Assessment in collaboration with UNODC",
+            "Recorded major cocaine seizures during his tenure"
+        ]
     },
     {
         id: 6,
         name: "AIG. ILIYA LOKADANG mni",
-        image: "images/iliya.jpg",
+        image: "images/cceos/iliya.jpg",
         yearOfService: "3rd May, 2000 – 4th September, 2000",
         decorations: "mni",
-        biography: "AIG Iliya Lokadang mni served as Chairman/Chief Executive of the National Drug Law Enforcement Agency (NDLEA) from May 2000 to September 2000. A senior police officer of distinction, he was appointed to lead the Agency during an important transitional period in its institutional history.\n\nThough his tenure was brief, AIG Lokadang maintained the operational efficiency and high professional standards of the Agency. He ensured the continuity of institutional programmes and operational strategies during the transition, sustaining the momentum of enforcement activities at all commands.\n\nHis professional conduct and unwavering commitment to the Agency's mandate during this period of transition demonstrated his dedication to the ideals for which NDLEA was established. AIG Lokadang's tenure is remembered for its stability and the smooth handover of leadership that followed."
+        biography: "Mr. Iliya Lokadang served as Chairman/Chief Executive Officer of the National Drug Law Enforcement Agency during a short but important transitional period in the leadership history of the Agency. His tenure came at a time when the NDLEA required steady administrative guidance to sustain its operations and maintain the momentum of ongoing anti-drug initiatives across the country.\n\nAlthough his time in office was relatively brief, Lokadang's leadership contributed to ensuring that the Agency's core responsibilities — particularly enforcement against illicit drug trafficking and abuse — continued without interruption. In institutions such as the NDLEA, periods of leadership transition can often create uncertainty or operational gaps. Lokadang's administration therefore played a stabilizing role in preserving the Agency's institutional coherence during this phase.\n\nHis stewardship reflected a commitment to maintaining the integrity of the operational structures that had already been established within the NDLEA and ensuring that the Agency remained focused on its statutory mandate.",
+        achievements: [
+            "Maintained operational tempo across all NDLEA commands during the transition",
+            "Ensured administrative stability and institutional coherence"
+        ]
     },
     {
         id: 7,
-        name: "ALHAJI BELLO YUSUF LAFIAJI OON, OFR.",
-        image: "images/bello.jpg",
+        name: "DR. BELLO YUSUF LAFIAJI, OON",
+        image: "images/cceos/bello.jpg",
         yearOfService: "10th October, 2000 – 24th November, 2005",
-        decorations: "OON OFR",
-        biography: "Alhaji Bello Yusuf Lafiaji OON, OFR served as Chairman/Chief Executive of the National Drug Law Enforcement Agency (NDLEA) for over five years, from October 2000 to November 2005. A seasoned administrator and public servant of exceptional calibre, Alhaji Lafiaji's tenure was one of the most transformative periods in the Agency's history.\n\nHe initiated wide-ranging reforms that modernised NDLEA's operational and administrative structures. Under his leadership, the Agency recorded significant increases in drug seizures at all points of entry and within the country's hinterland. He intensified the Agency's public awareness and demand reduction programmes, reaching millions of Nigerians through schools, community outreach, and media campaigns.\n\nAlhaji Lafiaji also expanded NDLEA's engagement with the international drug control community and strengthened the Agency's presence in all states of the federation. He commissioned new zonal offices and ensured the equipping of commands with modern enforcement tools and facilities.\n\nHis distinguished service to the nation earned him the national honours of Officer of the Order of the Niger (OON) and Officer of the Order of the Federal Republic (OFR) — a testament to his exemplary contribution to public service and drug law enforcement in Nigeria."
+        decorations: "OON",
+        biography: "Alhaji Bello Yusuf Lafiaji served as Chairman/Chief Executive Officer of the National Drug Law Enforcement Agency during a period that witnessed important efforts toward institutional reform and professionalization within the Agency. His leadership marked a phase in which the NDLEA increasingly sought to modernize its operational approaches and strengthen its institutional credibility both nationally and internationally.\n\nLafiaji brought to the Agency a wealth of administrative experience and strategic insight into security management. His tenure is widely associated with initiatives aimed at improving investigative procedures, strengthening intelligence gathering, and enhancing the professional standards of the Agency's personnel. These efforts were intended to ensure that the NDLEA remained capable of responding effectively to the evolving nature of drug trafficking operations, which had become increasingly sophisticated and transnational in character.\n\nUnder his leadership, the Agency began to place greater emphasis on intelligence-led operations, improved surveillance mechanisms, and stronger investigative frameworks, all of which contributed to strengthening its operational capacity.",
+        achievements: [
+            "Introduced NDLEA Orders, defining operational procedures and code of conduct",
+            "Established State Command Structures across the federation",
+            "Initiated promotion examinations and job specifications for NDLEA personnel",
+            "Spearheaded WAJO (West Africa Joint Operations)",
+            "Introduced State Commanders into the States Security Council Meetings"
+        ]
     },
     {
         id: 8,
-        name: "CP AHMADU GIADE",
-        image: "images/ahmadu.jpg",
-        yearOfService: "24th November, 2005 – 22nd November, 2015",
-        decorations: "",
-        biography: "CP Ahmadu Giade served as Chairman/Chief Executive of the National Drug Law Enforcement Agency (NDLEA) for a decade — from November 2005 to November 2015 — making his tenure the longest in the Agency's history. A distinguished and highly experienced police officer, CP Giade's decade-long leadership brought remarkable stability, transformation, and institutional growth to NDLEA.\n\nUnder his stewardship, the Agency achieved record-breaking seizures of cocaine, heroin, cannabis (marijuana), and other illicit substances at Nigerian airports, seaports, and land borders. He oversaw the expansion of NDLEA's operational capacity through the establishment of new commands, the acquisition of modern drug detection equipment, enhanced laboratory capabilities, and the training of thousands of personnel.\n\nCP Giade also significantly strengthened NDLEA's treatment and rehabilitation programmes, establishing drug treatment centres and counselling units across the country. His administration was deeply committed to demand reduction, launching several nationwide campaigns targeting youth, students, and vulnerable communities.\n\nHis tenure saw a significant enhancement of the Agency's international profile through robust partnerships with the United States Drug Enforcement Administration (DEA), INTERPOL, the United Nations Office on Drugs and Crime (UNODC), the International Narcotics Control Board (INCB), and numerous bilateral anti-drug cooperation frameworks. CP Giade is widely regarded as one of the most consequential leaders in NDLEA's history."
+        name: "DCP AHMADU GIADE, OFR",
+        image: "images/cceos/ahmadu.jpg",
+        yearOfService: "November, 2005 – November, 2015",
+        decorations: "OFR",
+        biography: "Ahmadu Giade, OFR, served as Chairman/Chief Executive Officer of the National Drug Law Enforcement Agency for approximately a decade, making him one of the longest-serving leaders in the history of the Agency. His tenure represented a significant period of institutional consolidation, operational strengthening, and increased international engagement for the NDLEA.\n\nWith a professional background in law enforcement, Giade brought to the Agency a leadership style characterized by strategic planning, administrative discipline, and sustained commitment to Nigeria's anti-narcotics efforts. Over the course of his leadership, the NDLEA experienced notable improvements in operational coordination, investigative capacity, and international collaboration.\n\nHis long tenure provided the Agency with a level of leadership continuity that enabled the implementation of medium- and long-term reforms aimed at strengthening both its enforcement capacity and institutional credibility.",
+        achievements: [
+            "Removed Nigeria from the U.S. Drug Majors List",
+            "Established the Joint Operational Task Force",
+            "Implemented the AirCop Project in collaboration with UNODC",
+            "Arrest and conviction of renowned drug baron Akindele Iku (alias Ile-Eru)",
+            "Creation of joint enforcement structures including SET, MET, CIATF, and Joint Border Task Force",
+            "Seizure of 14.2 metric tons of cocaine concealed in white cement and 29 containers of Tramadol",
+            "Conducted the Institutional Assessment with UNODC technical support, revealing key institutional challenges"
+        ]
     },
     {
         id: 9,
-        name: "COL. MUHAMMAD MUSTAPHA ABDALLAH (Rtd)",
-        image: "images/muhammad.jpg",
-        yearOfService: "11th January, 2016 – 15th January, 2021",
+        name: "MRS. ROLI BODE-GEORGE (Acting)",
+        image: "images/cceos/roli.jpg",
+        yearOfService: "November, 2015 – March, 2016 (Acting)",
         decorations: "",
-        biography: "Col. Muhammad Mustapha Abdallah (Rtd) served as Chairman/Chief Executive of the National Drug Law Enforcement Agency (NDLEA) from January 2016 to January 2021. A retired military officer of distinguished record, Col. Abdallah brought military discipline, strategic focus, and operational excellence to the Agency's leadership.\n\nHis tenure was characterised by intensified seizure operations at Nigerian airports, seaports, and land borders. He championed significant reforms in NDLEA's internal governance, initiating a comprehensive restructuring of the Agency's administrative and operational structures to improve efficiency, accountability, and results.\n\nUnder his leadership, NDLEA maintained a sustained campaign against drug trafficking syndicates and deepened its engagement in drug demand reduction among Nigerian youth. He launched several anti-drug campaigns targeting tertiary institutions and strengthened NDLEA's collaboration with the Ministry of Education and other relevant MDAs.\n\nCol. Abdallah also prioritised the welfare of NDLEA operatives and invested in the Agency's human capital development, sending officers for training at home and abroad and improving working conditions across all commands. His steady hand at the helm of NDLEA over five years laid the groundwork for the transformation that would follow under his successor."
+        biography: "Mrs. Roli Bode-George served as Acting Chairman/Chief Executive Officer of the National Drug Law Enforcement Agency between November 2015 and March 2016. Her appointment came at a critical moment following the completion of the ten-year tenure of her predecessor, Ahmadu Giade. She assumed leadership of the Agency during a transitional period, ensuring that the NDLEA's operations, policies, and institutional programmes continued without disruption.\n\nA seasoned public administrator and drug control specialist, Bode-George had accumulated extensive experience in narcotics control policy, institutional management, and drug demand reduction initiatives through her long service within the Agency. Her leadership combined administrative expertise with a strong commitment to addressing both the enforcement and public health dimensions of drug abuse in Nigeria.\n\nHer appointment was historically significant as she became the first woman to head the National Drug Law Enforcement Agency, albeit in an acting capacity. This development was widely regarded as an important milestone in advancing gender representation within leadership positions in Nigeria's security and law enforcement institutions.",
+        achievements: [
+            "First woman to head the National Drug Law Enforcement Agency",
+            "Maintained operational and policy continuity following a decade-long tenure",
+            "Promoted public health and drug awareness initiatives",
+            "Provided institutional support that enabled a smooth transition to the incoming administration"
+        ]
     },
     {
         id: 10,
+        name: "COL. MUHAMMAD MUSTAPHA ABDALLAH (Rtd.)",
+        image: "images/cceos/muhammad.jpg",
+        yearOfService: "January, 2016 – January, 2021",
+        decorations: "",
+        biography: "Colonel Muhammad Mustapha Abdallah (Rtd.) served as Chairman/Chief Executive Officer of the National Drug Law Enforcement Agency from January 2016 to January 2021. His appointment came at a time when Nigeria was seeking to strengthen its national response to the growing challenges posed by illicit drug trafficking and substance abuse.\n\nA retired officer of the Nigerian Army, Abdallah brought to the Agency a leadership style shaped by military discipline, strategic planning, and security management experience. His tenure was marked by efforts to strengthen the NDLEA's operational structures, improve intelligence coordination, and enhance collaboration with other national security and law enforcement institutions.",
+        achievements: [
+            "Relocated NDLEA Headquarters to Abuja",
+            "Created new Directorates: Seaport, Intelligence, Airport, and Planning, Research & Statistics",
+            "Conducted the National Drug Use Survey in 2018",
+            "Secured approval for 15,000 new NDLEA recruits",
+            "Acquired the Transit Camp at Airport Road, Abuja"
+        ]
+    },
+    {
+        id: 11,
         name: "BRIG. GEN. MB MARWA (RTD) CON, OFR",
-        image: "images/marwa.jpg",
+        image: "images/cceos/marwa.jpg",
         yearOfService: "January 2021 – Present",
         decorations: "CON OFR DSS",
         biography: `PROFILE OF BRIG. GEN. MB MARWA (RTD) CON, OFR
@@ -174,12 +248,8 @@ function initializeHomePage() {
         });
     }
     
-    // Populate current GOC biography and commanders grid
+    // Populate current GOC biography only (commanders grid is in pastCeosView)
     populateCurrentGocBiography();
-    if (commandersGrid) {
-        populateCommanders();
-        startCardAnimation();
-    }
 }
 
 // Start staggered card animations
@@ -376,6 +446,539 @@ function showBiographyView(commanderId) {
     if (isTransitioning) return;
     transitionToView('biographyView', 'biography', () => {
         displayBiography(commanderId);
+    });
+}
+
+// ---- Past CEOs View ----
+function showPastCeosView() {
+    if (isTransitioning) return;
+    transitionToView('pastCeosView', 'pastCeos', () => {
+        buildCeosSidebar();
+    });
+}
+
+function buildCeosSidebar() {
+    const sidebarList = document.getElementById('ceosSidebarList');
+    const countEl    = document.getElementById('ceosSidebarCount');
+    if (!sidebarList) return;
+
+    const pastCeos = commanders.slice(0, -1); // all except current Chairman
+
+    if (countEl) countEl.textContent = pastCeos.length + ' Chairmen';
+
+    sidebarList.innerHTML = '';
+    pastCeos.forEach((ceo, index) => {
+        const item = document.createElement('div');
+        item.className = 'ceos-sidebar-item' + (index === 0 ? ' active' : '');
+        item.setAttribute('data-id', ceo.id);
+        item.onclick = () => selectCeo(ceo.id);
+        item.addEventListener('mouseenter', function() {
+            triggerHoverColorEffect(this);
+        });
+        item.innerHTML = `
+            <div class="sidebar-item-num">${index + 1}</div>
+            <img src="${ceo.image}" alt="${ceo.name}" class="sidebar-item-photo" onerror="this.src='images/placeholder.jpg'">
+            <div class="sidebar-item-info">
+                <div class="sidebar-item-name">${ceo.name}</div>
+                <div class="sidebar-item-period">${ceo.yearOfService}</div>
+            </div>
+        `;
+        sidebarList.appendChild(item);
+    });
+
+    // Auto-select first on load
+    selectCeo(pastCeos[0].id);
+}
+
+function selectCeo(id) {
+    const ceo = commanders.find(c => c.id === id);
+    if (!ceo) return;
+
+    // Highlight active sidebar item
+    document.querySelectorAll('.ceos-sidebar-item').forEach(item => {
+        item.classList.toggle('active', parseInt(item.getAttribute('data-id')) === id);
+    });
+
+    const panel = document.getElementById('ceosDetailPanel');
+    if (!panel) return;
+
+    const formattedBio = ceo.biography.replace(/\n/g, '<br>');
+    const decorationsHtml = ceo.decorations && ceo.decorations.trim() !== ''
+        ? `<div class="ceo-detail-decorations">${ceo.decorations.toUpperCase()}</div>`
+        : '';
+
+    panel.innerHTML = `
+        <div class="ceo-detail-inner">
+            <div class="ceo-detail-header">
+                <div class="ceo-detail-portrait-wrap">
+                    <div class="ceo-detail-portrait-frame">
+                        <img src="${ceo.image}" alt="${ceo.name}" class="ceo-detail-portrait" onerror="this.src='images/placeholder.jpg'">
+                    </div>
+                </div>
+                <div class="ceo-detail-meta">
+                    <div class="ceo-detail-badge">CHAIRMAN / CEO</div>
+                    <h2 class="ceo-detail-name">${ceo.name}</h2>
+                    ${decorationsHtml}
+                    <div class="ceo-detail-period">${ceo.yearOfService}</div>
+                </div>
+            </div>
+
+            <div class="ceo-detail-sections">
+                <!-- Biography -->
+                <div class="ceo-section-card">
+                    <div class="ceo-section-title">
+                        <span class="section-icon">📜</span> BIOGRAPHY
+                    </div>
+                    <div class="ceo-section-body">${formattedBio}</div>
+                </div>
+
+                <!-- Achievements -->
+                <div class="ceo-section-card ceo-section-achievements">
+                    <div class="ceo-section-title">
+                        <span class="section-icon">🏆</span> ACHIEVEMENTS &amp; MILESTONES
+                    </div>
+                    <div class="ceo-section-body">
+                        ${ceo.achievements && ceo.achievements.length
+                            ? `<ul class="ceo-achievements-list">${ceo.achievements.map(a => `<li><span class="achievement-bullet"></span>${a}</li>`).join('')}</ul>`
+                            : `<div class="achievements-placeholder">
+                                <div class="placeholder-icon">🏗</div>
+                                <div class="placeholder-text">Achievements coming soon</div>
+                                <div class="placeholder-sub">
+                                    This section will be updated with key milestones, operational records,
+                                    and notable accomplishments recorded during the tenure of ${ceo.name}.
+                                </div>
+                               </div>`
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+
+    // Animate in and scroll to top
+    panel.scrollTop = 0;
+    panel.style.opacity = '0';
+    panel.style.transform = 'translateX(18px)';
+    requestAnimationFrame(() => {
+        panel.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+        panel.style.opacity = '1';
+        panel.style.transform = 'translateX(0)';
+    });
+}
+
+// ---- Special Assistants / CoS / Military Assistants Data ----
+const specialAssistants = [
+    {
+        name: "Jerry Kumdusi",
+        office: "SA to AIG Ba'ppa Jama're",
+        period: "1993–1994",
+        image: "images/placeholder.jpg"
+    },
+    {
+        name: "Maj. Jalingo",
+        office: "MA to Maj. Gen. Musa Bamaiyi",
+        period: "",
+        image: "images/placeholder.jpg"
+    },
+    {
+        name: "Maj. Auta",
+        office: "MA to Maj. Gen. Musa Bamaiyi",
+        period: "",
+        image: "images/placeholder.jpg"
+    },
+    {
+        name: "Col. Abel",
+        office: "MA to Maj. Gen. Musa Bamaiyi",
+        period: "",
+        image: "images/placeholder.jpg"
+    },
+    {
+        name: "Maj. Babangida",
+        office: "MA to Maj. Gen. Musa Bamaiyi",
+        period: "1994–1998",
+        image: "images/placeholder.jpg"
+    },
+    {
+        name: "Mr. Vincent Ossai",
+        office: "SA to CP Ogbonnaya Onovo",
+        period: "1998–2000",
+        image: "images/assistants/vincent_ossai.jpg"
+    },
+    {
+        name: "Usman Amali",
+        office: "SA to Alh. Bello Lafiagi",
+        period: "2000–2005",
+        image: "images/assistants/usman_amali.png"
+    },
+    {
+        name: "Dr. Muazu Umar",
+        office: "SA to Ahmadu Giade",
+        period: "2005–2008",
+        image: "images/assistants/muazu_umar.jpg"
+    },
+    {
+        name: "DCG Ahmed Ningi",
+        office: "SA to Ahmadu Giade",
+        period: "2005–2015",
+        image: "images/assistants/ahmed_ningi.png"
+    },
+    {
+        name: "DCG Femi Amos Oloruntoba",
+        office: "CoS to Col. Muhammad Mustapha Abdallah",
+        period: "2016–2021",
+        image: "images/assistants/femi_amos.jpg"
+    },
+    {
+        name: "DCG Sunday Mbona",
+        office: "CoS to Col. M. M. Abdallah",
+        period: "2016–2021",
+        image: "images/assistants/sunday_mbona.jpg"
+    },
+    {
+        name: "Col. Aminu MA",
+        office: "CoS to Brig. Gen. Mohamed Buba Marwa",
+        period: "2021 – present",
+        image: "images/assistants/aminu_ma.jpg"
+    },
+    {
+        name: "Col. Yakubu Bako",
+        office: "SA to Brig. Gen. Mohamed Buba Marwa",
+        period: "2021 – present",
+        image: "images/assistants/image68.jpg"
+    }
+];
+
+// ---- Directors Data ----
+const directors = [
+    {
+        name: "Ahmed Sule Ningi",
+        directorate: "Operations & General Investigation",
+        image: "images/directors/ahmed_sule.png"
+    },
+    {
+        name: "Idris Mohammed Bello",
+        directorate: "Special Duties / Commander Strike Force",
+        image: "images/directors/idris_mohammed.jpg"
+    },
+    {
+        name: "Umoru Ambrose",
+        directorate: "Technical Services",
+        image: "images/directors/umoru.jpg"
+    },
+    {
+        name: "Hamisu Lawan Alhaji (msi, mni)",
+        directorate: "Administration & Establishment",
+        image: "images/directors/hamisu_lawan.png"
+    },
+    {
+        name: "Ahmadu Garba",
+        directorate: "Airport Operations",
+        image: "images/directors/ahmadu_garba.png"
+    },
+    {
+        name: "Theresa Ene Asuquo",
+        directorate: "Prosecution & Legal Services",
+        image: "images/directors/theresa_ene.png"
+    },
+    {
+        name: "Joseph Icha",
+        directorate: "Training and Manpower Development",
+        image: "images/directors/joseph_icha.jpg"
+    },
+    {
+        name: "Archie-Abia Ibinabo Ogboba (fsi)",
+        directorate: "Seaport Operations",
+        image: "images/directors/archie_abia.jpg"
+    },
+    {
+        name: "Nnoruka Kenechi Chineze",
+        directorate: "External Relations",
+        image: "images/directors/nnoruka_kenechi.jpg"
+    },
+    {
+        name: "Dr. Stephen Okpe",
+        directorate: "Medical Services",
+        image: "images/directors/stephen_okpe.png"
+    },
+    {
+        name: "Afolabi Patricia Onojimesike",
+        directorate: "Forensic & Chemical Monitoring",
+        image: "images/directors/afolabi_patricia.jpg"
+    },
+    {
+        name: "Ede Bridget Elakeche (fsi)",
+        directorate: "Planning, Research & Statistics",
+        image: "images/directors/ede_bridget.jpg"
+    },
+    {
+        name: "Iwuchukwu Gladys Obiageri",
+        directorate: "Proceed of Crime Management",
+        image: "images/directors/iwuchukwu.jpg"
+    },
+    {
+        name: "Ibrahim Mohammed Bashir",
+        directorate: "Counselling, Treatment & Rehabilitation",
+        image: "images/directors/ibrahim_mohammed.jpg"
+    },
+    {
+        name: "Dankolo Mohammed Shehu",
+        directorate: "Prevention & Sensitization",
+        image: "images/directors/dankolo.jpg"
+    },
+    {
+        name: "Tunde John Omotosin",
+        directorate: "Internal Affairs / Provost Marshal",
+        image: "images/directors/tunde_john.jpg"
+    },
+    {
+        name: "Idris Abubakar Ahmad",
+        directorate: "Assets & Financial Investigation",
+        image: "images/directors/idris_abubakar.png"
+    },
+    {
+        name: "Lucas Sunday",
+        directorate: "Finance & Account",
+        image: "images/directors/lucas.png"
+    },
+    {
+        name: "Idris Zakari Ahmed",
+        directorate: "Intelligence",
+        image: "images/directors/idris_zakari.png"
+    },
+    {
+        name: "Femi Babafemi",
+        directorate: "Media & Advocacy",
+        image: "images/directors/femi_babafemi.png"
+    }
+];
+
+// ---- Agency Secretaries Data ----
+const agencySecretaries = [
+    {
+        name: "Mr. Gbenga Tiyamiyu",
+        period: "1990–1993",
+        image: "images/placeholder.jpg"
+    },
+    {
+        name: "Mr. Haruna",
+        period: "",
+        image: "images/placeholder.jpg"
+    },
+    {
+        name: "Mr. Dave Ashang (OON)",
+        period: "1999–2006",
+        image: "images/secretaries/dave_ashang.png"
+    },
+    {
+        name: "Otunba Lanre Ipinmisho, MFR",
+        period: "2006–2010",
+        image: "images/secretaries/otunba_lanre.png"
+    },
+    {
+        name: "Mr. Femi Ajayi",
+        period: "10th Dec. 2010 – 30th June 2014",
+        image: "images/secretaries/femi_ajayi.png"
+    },
+    {
+        name: "Mrs. Roli Bode-George",
+        period: "20th June 2014 – 22nd June 2018",
+        image: "images/secretaries/roli_bode.jpg"
+    },
+    {
+        name: "Mr. Haruna Usman Shadrach",
+        period: "Sept. 2019 – Till Date",
+        image: "images/secretaries/haruna_usman.png"
+    }
+];
+
+// ---- Content View ----
+const contentData = {
+    secretary: {
+        title: 'AGENCY SECRETARIES FROM INCEPTION',
+        subtitle: 'Administrative heads of the Agency\'s Secretariat',
+        icon: '📋',
+        body: 'The Office of the Agency Secretary serves as the administrative nerve centre of NDLEA. The Agency Secretary coordinates the day-to-day administrative functions of the Agency, maintains institutional records, and ensures smooth communication between the office of the Chairman/CEO and all departments and commands.'
+    },
+    assistants: {
+        title: 'SPECIAL ASSISTANTS, CHIEF OF STAFF & MILITARY ASSISTANTS FROM INCEPTION',
+        subtitle: '(SA/CoS/MA) for Chairman/Chief Executive Officers',
+        icon: '🤝',
+        body: 'The Office of Special Assistants comprises Senior and Special Assistants appointed to support the Chairman/CEO on specific mandates, including policy, public affairs, media and communications, legislative liaison, and interagency coordination. They serve as key advisers and liaisons for the office of the Chairman.'
+    },
+    directors: {
+        title: 'DIRECTORS',
+        icon: '🏛',
+        body: 'NDLEA operates through a structured directorate system comprising departments responsible for Drug Law Enforcement, Finance and Administration, Drug Demand Reduction, Planning, Research and Statistics, Legal Services, Information and Communication Technology, and Human Resources Management, among others. The Director-General oversees the operations of each directorate.'
+    },
+    achievements: {
+        title: 'ACHIEVEMENTS',
+        icon: '🏆',
+        body: 'Since 2021, NDLEA under the current administration has recorded unprecedented drug seizures surpassing all previous annual records. The Agency has dismantled major transnational drug syndicates, arrested thousands of traffickers, expanded its counselling and rehabilitation network, and deepened its demand reduction campaigns across all 36 states and the FCT through initiatives such as CADA (Creatives Against Drug Abuse) and Operation LOUD.'
+    },
+    gallery: {
+        title: 'GALLERY OF EVENTS',
+        icon: '📸',
+        body: 'This section features a curated photographic record of NDLEA\'s key events, high-level operations, drug seizure displays, inter-agency ceremonies, international summits, award presentations, and community outreach programmes. The gallery documents the Agency\'s proud institutional history through imagery.'
+    },
+    infrastructure: {
+        title: 'INFRASTRUCTURE DEVELOPMENT',
+        icon: '🏗',
+        body: 'NDLEA has undertaken significant capital projects and infrastructural upgrades across its commands nationwide. These include the construction and renovation of zonal command headquarters, barracks, detention facilities, laboratories, and training centres. The current administration has accelerated infrastructure development to provide operatives with modern, fit-for-purpose workplaces and equipment.'
+    }
+};
+
+function showContentView(type) {
+    if (isTransitioning) return;
+    transitionToView('contentView', 'content', () => {
+        const body = document.getElementById('contentViewBody');
+        if (!body) return;
+        const data = contentData[type];
+        if (!data) return;
+
+        if (type === 'directors') {
+            const rows = directors.map((person, i) => `
+                <tr class="sa-row">
+                    <td class="sa-cell sa-cell-num">${i + 1}</td>
+                    <td class="sa-cell sa-cell-photo">
+                        <img src="${person.image}" alt="${person.name}" class="sa-photo" onerror="this.src='images/placeholder.jpg'">
+                    </td>
+                    <td class="sa-cell sa-cell-name">${person.name}</td>
+                    <td class="sa-cell sa-cell-office">${person.directorate}</td>
+                </tr>
+            `).join('');
+            body.innerHTML = `
+                <div class="content-hero">
+                    <div class="content-hero-badge">${data.title}</div>
+                    <p class="sa-roster-subtitle">${data.subtitle}</p>
+                </div>
+                <div class="sa-roster-wrap">
+                    <table class="sa-roster-table">
+                        <thead>
+                            <tr>
+                                <th class="sa-th sa-th-num">#</th>
+                                <th class="sa-th sa-th-photo">Photo</th>
+                                <th class="sa-th">Name</th>
+                                <th class="sa-th">Directorate</th>
+                            </tr>
+                        </thead>
+                        <tbody>${rows}</tbody>
+                    </table>
+                </div>
+            `;
+            return;
+        }
+
+        if (type === 'directors') {
+            const rows = directors.map((person, i) => `
+                <tr class="sa-row">
+                    <td class="sa-cell sa-cell-num">${i + 1}</td>
+                    <td class="sa-cell sa-cell-photo">
+                        <img src="${person.image}" alt="${person.name}" class="sa-photo" onerror="this.src='images/placeholder.jpg'">
+                    </td>
+                    <td class="sa-cell sa-cell-name">${person.name}</td>
+                    <td class="sa-cell sa-cell-office">${person.directorate}</td>
+                </tr>
+            `).join('');
+            body.innerHTML = `
+                <div class="content-hero">
+                    <div class="content-hero-badge">${data.title}</div>
+                    <p class="sa-roster-subtitle">${data.subtitle}</p>
+                </div>
+                <div class="sa-roster-wrap">
+                    <table class="sa-roster-table">
+                        <thead>
+                            <tr>
+                                <th class="sa-th sa-th-num">#</th>
+                                <th class="sa-th sa-th-photo">Photo</th>
+                                <th class="sa-th">Name</th>
+                                <th class="sa-th">Directorate</th>
+                            </tr>
+                        </thead>
+                        <tbody>${rows}</tbody>
+                    </table>
+                </div>
+            `;
+            return;
+        }
+
+        if (type === 'secretary') {
+            const rows = agencySecretaries.map((person, i) => `
+                <tr class="sa-row">
+                    <td class="sa-cell sa-cell-num">${i + 1}</td>
+                    <td class="sa-cell sa-cell-photo">
+                        <img src="${person.image}" alt="${person.name}" class="sa-photo" onerror="this.src='images/placeholder.jpg'">
+                    </td>
+                    <td class="sa-cell sa-cell-name">${person.name}</td>
+                    <td class="sa-cell sa-cell-period">${person.period || '—'}</td>
+                </tr>
+            `).join('');
+            body.innerHTML = `
+                <div class="content-hero">
+                    <div class="content-hero-badge">${data.title}</div>
+                    <p class="sa-roster-subtitle">${data.subtitle}</p>
+                </div>
+                <div class="sa-roster-wrap">
+                    <table class="sa-roster-table">
+                        <thead>
+                            <tr>
+                                <th class="sa-th sa-th-num">#</th>
+                                <th class="sa-th sa-th-photo">Photo</th>
+                                <th class="sa-th">Name</th>
+                                <th class="sa-th">Tenure</th>
+                            </tr>
+                        </thead>
+                        <tbody>${rows}</tbody>
+                    </table>
+                </div>
+            `;
+            return;
+        }
+
+        if (type === 'assistants') {
+            const rows = specialAssistants.map((person, i) => `
+                <tr class="sa-row">
+                    <td class="sa-cell sa-cell-num">${i + 1}</td>
+                    <td class="sa-cell sa-cell-photo">
+                        <img src="${person.image}" alt="${person.name}" class="sa-photo" onerror="this.src='images/placeholder.jpg'">
+                    </td>
+                    <td class="sa-cell sa-cell-name">${person.name}</td>
+                    <td class="sa-cell sa-cell-office">${person.office}</td>
+                    <td class="sa-cell sa-cell-period">${person.period || '—'}</td>
+                </tr>
+            `).join('');
+            body.innerHTML = `
+                <div class="content-hero">
+                    <div class="content-hero-badge">${data.title}</div>
+                    <p class="sa-roster-subtitle">${data.subtitle}</p>
+                </div>
+                <div class="sa-roster-wrap">
+                    <table class="sa-roster-table">
+                        <thead>
+                            <tr>
+                                <th class="sa-th sa-th-num">#</th>
+                                <th class="sa-th sa-th-photo">Photo</th>
+                                <th class="sa-th">Name</th>
+                                <th class="sa-th">Office</th>
+                                <th class="sa-th">Period</th>
+                            </tr>
+                        </thead>
+                        <tbody>${rows}</tbody>
+                    </table>
+                </div>
+            `;
+            return;
+        }
+
+        body.innerHTML = `
+            <div class="content-hero">
+                <div class="content-hero-badge">${data.title}</div>
+            </div>
+            <div class="coming-soon-card">
+                <span class="coming-soon-icon">${data.icon}</span>
+                <div class="coming-soon-title">${data.title}</div>
+                <p class="coming-soon-text">${data.body}</p>
+            </div>
+        `;
     });
 }
 
