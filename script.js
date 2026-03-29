@@ -752,6 +752,225 @@ const directors = [
     }
 ];
 
+// ---- Achievements Data ----
+const achievementsData = [
+    {
+        id: 'seizures',
+        title: 'Drug Seizures',
+        icon: '🚔',
+        desc: 'Major drug seizures recorded by NDLEA across Nigeria',
+        isGroup: true,
+        subcategories: [
+            {
+                id: 'canabis',
+                title: 'Cannabis',
+                basePath: 'images/achievements/seizures/canabis/',
+                images: [
+                    { file: '1.jpg', caption: '' },
+                    { file: '2.jpg', caption: '' },
+                    { file: '3.jpg', caption: '' },
+                    { file: '4.jpg', caption: '' },
+                    { file: '5.jpg', caption: '2,000 tons of Cannabis Sativa at Onade warehouse Okpuje in Owan West LGA, Edo State' },
+                    { file: '6.jpg', caption: '' },
+                    { file: '7.jpg', caption: '5.40 kilograms of methamphetamine; 10.70 kilograms of Loud, a strong strain of cannabis; 16g of cocaine; 200g of phenacetin; 200g of methcathinone and 100g of caffeine concealed in pressure machine cylinders imported from South Africa' },
+                    { file: '8.jpg', caption: '' },
+                    { file: '9.jpg', caption: '' },
+                    { file: '10.jpg', caption: '317 metric tons of cannabis seized in Edo forest' },
+                    { file: '11.jpg', caption: '2.6kg Colorado packaged in branded containers and some concealed in flight boarding cards' }
+                ]
+            },
+            {
+                id: 'cocaine',
+                title: 'Cocaine',
+                basePath: 'images/achievements/seizures/cocaine/',
+                images: [
+                    { file: '1.jpg', caption: 'Largest Cocaine Bust in Ikorodu' },
+                    { file: '2.jpg', caption: '74-year-old man, Ikwuakalom Emeka, at the Nnamdi Azikiwe International Airport (NAIA), Abuja, after allegedly finding 11 kilograms of cocaine concealed in his luggage' },
+                    { file: '3.jpg', caption: 'NDLEA Recovers Multi-Billion Naira Cocaine, Fentanyl Consignments — May 2024' },
+                    { file: '4.jpg', caption: '20.75kg Black Liquid Cocaine at Abuja Airport — March 15, 2022' },
+                    { file: '6.jpg', caption: '' },
+                    { file: '7.png', caption: 'Cocaine consignment worth over $235 million (approximately ₦338 billion) at PTML terminal of Tincan Island Port, Lagos — the largest drug bust ever recorded at the port' },
+                    { file: '8.jpg', caption: 'MV Nord Bosporus (IMO: 9760110) from the port of Santos, Brazil, at the Apapa seaport in Lagos, with no less than 20 kilograms of cocaine buried under its cargo' },
+                    { file: '9.jpg', caption: '' }
+                ]
+            },
+            {
+                id: 'heroin',
+                title: 'Heroin',
+                basePath: 'images/achievements/seizures/heroin/',
+                images: [
+                    { file: '1.jpg', caption: 'Largest Heroin Bust at MMIA — February 2024' },
+                    { file: '2.jpg', caption: '' }
+                ]
+            },
+            {
+                id: 'tramadol',
+                title: 'Tramadol & Other Psychotropics',
+                basePath: 'images/achievements/seizures/tramadol/',
+                images: [
+                    { file: '1.jpg', caption: 'NDLEA Busts Tramadol Cartel in Lagos — January 2023' },
+                    { file: '2.jpg', caption: 'Amphetamine (Captagon)' },
+                    { file: '3.jpg', caption: '' },
+                    { file: '4.jpg', caption: 'NDLEA Intercepts ₦9.8 Billion Worth of Fresh Codeine Shipments from India — July 2024' },
+                    { file: '5.jpg', caption: 'Billion Opioids Intercepted at Tincan Island, Lagos' },
+                    { file: '6.jpg', caption: '' },
+                    { file: '7.jpg', caption: '' }
+                ]
+            },
+            {
+                id: 'laboratory',
+                title: 'Clandestine Laboratories Discovered & Decommissioned',
+                basePath: 'images/achievements/seizures/laboratory/',
+                images: [
+                    { file: '1.jpg', caption: '' },
+                    { file: '2.jpg', caption: '' },
+                    { file: '3.jpg', caption: '' },
+                    { file: '4.jpg', caption: 'The first clandestine laboratory to be discovered in Nigeria was in June 2011' },
+                    { file: '5.jpg', caption: '' },
+                    { file: '6.jpg', caption: '' },
+                    { file: '7.jpg', caption: '' },
+                    { file: '8.jpg', caption: '' },
+                    { file: '9.jpg', caption: '' },
+                    { file: '10.jpg', caption: '' },
+                    { file: 'image64.jpg', caption: '' }
+                ]
+            }
+        ]
+    },
+    {
+        id: 'canabis_sativa_farm_destruction',
+        title: 'Cannabis Farm Destruction',
+        icon: '🌿',
+        desc: 'Destruction of illegal cannabis farms across Nigeria',
+        isGroup: false,
+        basePath: 'images/achievements/canabis_sativa_farm_destruction/',
+        images: [
+            { file: '1.jpg', caption: '' },
+            { file: '2.jpg', caption: '' },
+            { file: '3.jpg', caption: '' },
+            { file: '4.jpg', caption: '' },
+            { file: '5.jpg', caption: '' }
+        ]
+    },
+    {
+        id: 'exhibit_burning',
+        title: 'Exhibit Burning',
+        icon: '🔥',
+        desc: 'Public destruction of seized drug exhibits',
+        isGroup: false,
+        basePath: 'images/achievements/exhibit_burning/',
+        images: [
+            { file: '1.jpg', caption: '' },
+            { file: '2.jpg', caption: '' },
+            { file: '3.jpg', caption: '' },
+            { file: '4.jpg', caption: '' },
+            { file: '5.jpg', caption: '' },
+            { file: '6.jpg', caption: '' }
+        ]
+    }
+];
+
+// ---- Achievements Gallery State & Functions ----
+let achGalleryImages = [];
+let achLbIndex = 0;
+
+function renderAchievementsCategories() {
+    const container = document.getElementById('achievements-container');
+    if (!container) return;
+    const cards = achievementsData.map(cat => `
+        <div class="ach-cat-card" onclick="achCategoryClick('${cat.id}')">
+            <span class="ach-cat-icon">${cat.icon}</span>
+            <div class="ach-cat-title">${cat.title}</div>
+            <div class="ach-cat-desc">${cat.desc}</div>
+            <span class="ach-cat-badge">${cat.isGroup ? cat.subcategories.length + ' categories' : cat.images.length + ' photos'}</span>
+        </div>
+    `).join('');
+    container.innerHTML = `<div class="ach-categories-grid">${cards}</div>`;
+}
+
+function achCategoryClick(catId) {
+    const cat = achievementsData.find(c => c.id === catId);
+    if (!cat) return;
+    if (cat.isGroup) {
+        renderAchievementsSubcategories(catId);
+    } else {
+        achShowGallery(cat.basePath, cat.images, cat.title, false, null);
+    }
+}
+
+function renderAchievementsSubcategories(catId) {
+    const cat = achievementsData.find(c => c.id === catId);
+    const container = document.getElementById('achievements-container');
+    if (!container || !cat) return;
+    const cards = cat.subcategories.map(sub => `
+        <div class="ach-cat-card" onclick="achSubcategoryClick('${catId}', '${sub.id}')">
+            <div class="ach-cat-title">${sub.title}</div>
+            <span class="ach-cat-badge">${sub.images.length} photos</span>
+        </div>
+    `).join('');
+    container.innerHTML = `
+        <button class="ach-back-btn" onclick="renderAchievementsCategories()">&#8592; Back to Categories</button>
+        <div class="ach-section-heading">${cat.title}</div>
+        <div class="ach-categories-grid">${cards}</div>
+    `;
+}
+
+function achSubcategoryClick(catId, subId) {
+    const cat = achievementsData.find(c => c.id === catId);
+    if (!cat || !cat.isGroup) return;
+    const sub = cat.subcategories.find(s => s.id === subId);
+    if (!sub) return;
+    achShowGallery(sub.basePath, sub.images, sub.title, true, catId);
+}
+
+function achShowGallery(basePath, images, title, isSubcategory, catId) {
+    achGalleryImages = images.map(img => ({ src: basePath + img.file, caption: img.caption }));
+    const container = document.getElementById('achievements-container');
+    if (!container) return;
+    const backOnclick = isSubcategory
+        ? `renderAchievementsSubcategories('${catId}')`
+        : `renderAchievementsCategories()`;
+    const items = achGalleryImages.map((img, i) => `
+        <div class="ach-gallery-item" onclick="achOpenLightbox(${i})">
+            <img src="${img.src}" alt="" loading="lazy" onerror="this.parentElement.style.display='none'">
+            ${img.caption ? `<div class="ach-gallery-caption">${img.caption}</div>` : ''}
+        </div>
+    `).join('');
+    container.innerHTML = `
+        <button class="ach-back-btn" onclick="${backOnclick}">&#8592; Back</button>
+        <div class="ach-section-heading">${title}</div>
+        <div class="ach-gallery-grid">${items}</div>
+    `;
+}
+
+function achOpenLightbox(index) {
+    achLbIndex = index;
+    achUpdateLightbox();
+    const lb = document.getElementById('ach-lightbox');
+    if (lb) { lb.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
+}
+
+function achCloseLightbox() {
+    const lb = document.getElementById('ach-lightbox');
+    if (lb) { lb.style.display = 'none'; document.body.style.overflow = ''; }
+}
+
+function achLightboxNav(dir) {
+    achLbIndex = (achLbIndex + dir + achGalleryImages.length) % achGalleryImages.length;
+    achUpdateLightbox();
+}
+
+function achUpdateLightbox() {
+    const img = document.getElementById('ach-lb-img');
+    const cap = document.getElementById('ach-lb-caption');
+    const counter = document.getElementById('ach-lb-counter');
+    const item = achGalleryImages[achLbIndex];
+    if (!item) return;
+    if (img) img.src = item.src;
+    if (cap) { cap.textContent = item.caption || ''; cap.style.display = item.caption ? 'block' : 'none'; }
+    if (counter) counter.textContent = `${achLbIndex + 1} / ${achGalleryImages.length}`;
+}
+
 // ---- Agency Secretaries Data ----
 const agencySecretaries = [
     {
@@ -966,6 +1185,17 @@ function showContentView(type) {
                     </table>
                 </div>
             `;
+            return;
+        }
+
+        if (type === 'achievements') {
+            body.innerHTML = `
+                <div class="content-hero">
+                    <div class="content-hero-badge">${data.title}</div>
+                </div>
+                <div id="achievements-container"></div>
+            `;
+            renderAchievementsCategories();
             return;
         }
 

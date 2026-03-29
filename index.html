@@ -412,6 +412,18 @@
         </main>
     </div>
 
+    <!-- Achievements Lightbox -->
+    <div id="ach-lightbox" class="ach-lightbox" style="display:none" onclick="if(event.target===this)achCloseLightbox()">
+        <button class="ach-lb-close" onclick="achCloseLightbox()">&#x2715;</button>
+        <button class="ach-lb-prev" onclick="achLightboxNav(-1)">&#x2039;</button>
+        <div class="ach-lb-inner">
+            <img id="ach-lb-img" src="" alt="">
+            <p id="ach-lb-caption" class="ach-lb-caption"></p>
+            <div id="ach-lb-counter" class="ach-lb-counter"></div>
+        </div>
+        <button class="ach-lb-next" onclick="achLightboxNav(1)">&#x203a;</button>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
