@@ -752,6 +752,148 @@ const directors = [
     }
 ];
 
+// ---- Infrastructure Data ----
+const infrastructureData = [
+    {
+        id: 'baracks',
+        title: 'Barracks & Command Complexes',
+        basePath: 'images/infrastructure/baracks/',
+        images: [
+            { file: '1.png', caption: '' },
+            { file: '2.png', caption: '' },
+            { file: '3.png', caption: '' },
+            { file: '4.png', caption: '' },
+            { file: '5.jpg', caption: 'Adamawa Barracks' },
+            { file: '6.jpg', caption: 'Gombe State Command Complex' },
+            { file: '7.jpg', caption: 'Ekiti State Command Complex' },
+            { file: '8.jpg', caption: 'Yobe State Command Office Complex' },
+            { file: '9.jpg', caption: '' },
+            { file: '10.jpg', caption: 'FCT Barracks' },
+            { file: '11.jpg', caption: 'Kano Barracks' },
+            { file: '12.png', caption: '' },
+            { file: '13.png', caption: '' },
+            { file: '14.jpg', caption: 'Enugu Barracks' },
+            { file: '15.jpg', caption: 'NHQ' },
+            { file: '16.png', caption: '' },
+            { file: '17.jpg', caption: '' },
+            { file: '18.jpg', caption: '' },
+            { file: '19.jpg', caption: '' },
+            { file: '20.jpg', caption: '' },
+            { file: '21.jpg', caption: '' }
+        ]
+    },
+    {
+        id: 'alt_dev',
+        title: 'Alternative Development Initiative',
+        basePath: 'images/infrastructure/Alternative Development Initiative/',
+        images: [
+            { file: '1.jpg', caption: '' },
+            { file: '2.jpg', caption: '' },
+            { file: '3.jpg', caption: '' },
+            { file: '4.jpg', caption: 'Distribution of one trailer load (600 bags) of Geo Plus and Geo Green fertilizers to the three pilot communities — Ifon, Ilu-Abo and Eleyowo' },
+            { file: '5.jpg', caption: '' },
+            { file: '6.jpg', caption: '' },
+            { file: '7.jpg', caption: '' }
+        ]
+    },
+    {
+        id: 'vehicles',
+        title: 'Commissioning of 48 New Operational Vehicles',
+        basePath: 'images/infrastructure/COMMISSIONS 48 NEW OPERATIONAL VEHICLES/',
+        images: [
+            { file: '1.png', caption: '' },
+            { file: '2.jpg', caption: '' },
+            { file: '3.jpg', caption: '' },
+            { file: '4.jpg', caption: '' },
+            { file: '5.jpg', caption: '' },
+            { file: '6.jpg', caption: '' }
+        ]
+    },
+    {
+        id: 'trainings',
+        title: 'Local and International Trainings',
+        basePath: 'images/infrastructure/Local and International Trainings/',
+        images: [
+            { file: '1.jpg', caption: '' },
+            { file: '2.jpg', caption: '' },
+            { file: '3.jpg', caption: '' },
+            { file: '4.jpg', caption: '' },
+            { file: '5.jpg', caption: '' },
+            { file: '6.jpg', caption: '' },
+            { file: '7.jpg', caption: '' },
+            { file: '8.jpg', caption: '' },
+            { file: '9.jpg', caption: '' },
+            { file: '10.jpg', caption: '' },
+            { file: '11.jpg', caption: '' },
+            { file: '12.jpg', caption: '' },
+            { file: '13.jpg', caption: '' },
+            { file: '14.jpg', caption: '' },
+            { file: '15.jpg', caption: '' },
+            { file: '16.jpg', caption: '' },
+            { file: '17.jpg', caption: '' },
+            { file: '18.png', caption: 'Regional training for six West African countries on how to dismantle clandestine laboratories' },
+            { file: '18.jpg', caption: 'NDLEA Officers with Military and other Paramilitary Officers in a group photograph at the end of the Leadership Course 12/2024 and Election Monitoring Course 6/2024 at the Martin Luther Agwai International Leadership and Peacekeeping Centre Jaji, Kaduna State. September 2024.' },
+            { file: '19.jpg', caption: 'An NDLEA Officer receiving a certificate of training at the end of the Leadership Course 12/2024 and Election Monitoring Course 6/2024 at the Martin Luther Agwai International Leadership and Peacekeeping Centre Jaji, Kaduna State. September 2024.' },
+            { file: '20.jpg', caption: '' },
+            { file: '21.jpg', caption: '' },
+            { file: '22.jpg', caption: '' },
+            { file: '23.jpg', caption: '' },
+            { file: '24.jpg', caption: '' },
+            { file: '25.jpg', caption: '' }
+        ]
+    },
+    {
+        id: 'rehab',
+        title: 'Treatment & Rehabilitation Centres',
+        basePath: 'images/infrastructure/Treatment and Rehabilitation centers/',
+        images: [
+            { file: '1.jpg', caption: 'NDLEA Oyo State Substance Use Treatment and Care Facility' },
+            { file: '2.jpg', caption: 'NDLEA Adamawa State Substance Use Treatment and Care Facility' },
+            { file: '3.jpg', caption: 'NDLEA Adamawa State Substance Use Treatment and Care Facility' },
+            { file: '4.jpg', caption: 'NDLEA Adamawa State Substance Use Treatment and Care Facility' },
+            { file: '5.jpg', caption: 'NDLEA Kano State Substance Use Treatment and Care Facility' },
+            { file: '6.jpg', caption: 'NDLEA Kano State Substance Use Treatment and Care Facility' },
+            { file: '7.jpg', caption: 'NDLEA Kano State Substance Use Treatment and Care Facility' },
+            { file: '8.jpg', caption: 'NDLEA Kano State Substance Use Treatment and Care Facility' },
+            { file: '9.jpg', caption: 'NDLEA Rivers State Substance Use Treatment and Care Facility — Under construction, courtesy of Rivers State Government' },
+            { file: '10.jpg', caption: 'NDLEA Rivers State Substance Use Treatment and Care Facility — Under construction, courtesy of Rivers State Government' },
+            { file: '11.png', caption: '' }
+        ]
+    }
+];
+
+// ---- Infrastructure Render Functions ----
+function renderInfrastructureCategories() {
+    const container = document.getElementById('infrastructure-container');
+    if (!container) return;
+    const cards = infrastructureData.map(cat => `
+        <div class="ach-cat-card" onclick="infraShowGallery('${cat.id}')">
+            <div class="ach-cat-title">${cat.title}</div>
+            <span class="ach-cat-badge">${cat.images.length} photos</span>
+        </div>
+    `).join('');
+    container.innerHTML = `<div class="ach-categories-grid">${cards}</div>`;
+}
+
+function infraShowGallery(catId) {
+    const cat = infrastructureData.find(c => c.id === catId);
+    if (!cat) return;
+    achGalleryImages = cat.images.map(img => ({ src: cat.basePath + img.file, caption: img.caption }));
+    const container = document.getElementById('infrastructure-container');
+    if (!container) return;
+    const items = achGalleryImages.map((img, i) => `
+        <div class="ach-gallery-item" onclick="achOpenLightbox(${i})">
+            <img src="${img.src}" alt="" loading="lazy" onerror="this.parentElement.style.display='none'">
+            ${img.caption ? `<div class="ach-gallery-caption">${img.caption}</div>` : ''}
+        </div>
+    `).join('');
+    container.innerHTML = `
+        <button class="ach-back-btn" onclick="renderInfrastructureCategories()">&#8592; Back to Categories</button>
+        <div class="ach-section-heading">${cat.title}</div>
+        <div class="ach-gallery-grid">${items}</div>
+    `;
+}
+
 // ---- Gallery Data ----
 const galleryData = [
     {
@@ -1286,6 +1428,17 @@ function showContentView(type) {
                 <div id="gallery-container"></div>
             `;
             renderGalleryCategories();
+            return;
+        }
+
+        if (type === 'infrastructure') {
+            body.innerHTML = `
+                <div class="content-hero">
+                    <div class="content-hero-badge">${data.title}</div>
+                </div>
+                <div id="infrastructure-container"></div>
+            `;
+            renderInfrastructureCategories();
             return;
         }
 
