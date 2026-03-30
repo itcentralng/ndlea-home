@@ -640,8 +640,11 @@ body {
 .card-vertical, .row-triple .nav-card, .row-double .nav-card {
     flex: 1;
     flex-direction: column;
-    align-items: flex-start;
-    padding: var(--s4) var(--s5);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    aspect-ratio: 1 / 1;
+    padding: var(--s5);
     border-top: 3px solid var(--red-dark);
     border-left: 1px solid var(--border);
 }
@@ -668,8 +671,8 @@ body {
 .nav-card:hover .nav-card-icon-wrap { background: rgba(204,0,0,0.22); }
 
 .row-triple .nav-card-icon-wrap, .row-double .nav-card-icon-wrap {
-    width: 32px; height: 32px;
-    margin-bottom: var(--s2);
+    width: 38px; height: 38px;
+    margin-bottom: var(--s3);
 }
 
 .nav-card-body { flex: 1; min-width: 0; }
@@ -697,12 +700,14 @@ body {
 
 .row-triple .nav-card-title, .row-double .nav-card-title {
     font-size: var(--fs-xs);
-    margin-bottom: 3px;
+    margin-bottom: 4px;
+    text-align: center;
 }
 
 .row-triple .nav-card-desc, .row-double .nav-card-desc {
     font-size: 0.62rem;
     -webkit-line-clamp: 3;
+    text-align: center;
 }
 
 .nav-card-chevron {
