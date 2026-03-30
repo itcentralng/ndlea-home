@@ -255,55 +255,38 @@ function initializeHomePage() {
     initCceosDeck();
 }
 
-// Fan rotations for 5 cards (degrees), spread like a hand of cards
-const FAN_ROTATIONS = [-26, -13, 0, 13, 26];
-const FAN_TRANSLATIONS = [8, 3, 0, 3, 8]; // extra translateY to arc the tips up
-
 function initCceosDeck() {
     const deck = document.getElementById('cceosDeck');
     if (!deck) return;
 
-    // All past commanders (exclude current/last)
     const pastCEOs = commanders.slice(0, -1);
-    const N = Math.min(5, pastCEOs.length);
+    if (!pastCEOs.length) return;
 
-    // Create the N static fan card elements once
+    // Build slideshow: one <img> per CEO + a caption overlay
     deck.innerHTML = '';
-    const fanCards = [];
-    for (let i = 0; i < N; i++) {
-        const card = document.createElement('div');
-        card.className = 'fan-card';
-        // Apply fan rotation as inline transform so nth-child z-index still applies
-        card.style.transform = `rotate(${FAN_ROTATIONS[i]}deg) translateY(${FAN_TRANSLATIONS[i]}px)`;
+    deck.className = 'cceos-slideshow';
+
+    const imgs = pastCEOs.map((ceo, i) => {
         const img = document.createElement('img');
-        img.src = pastCEOs[i % pastCEOs.length].image;
-        img.alt = pastCEOs[i % pastCEOs.length].name;
-        img.onerror = () => { img.style.display = 'none'; };
-        card.appendChild(img);
-        deck.appendChild(card);
-        fanCards.push({ el: card, imgEl: img });
-    }
+        img.src = ceo.image;
+        img.alt = ceo.name;
+        if (i === 0) img.classList.add('slide-active');
+        deck.appendChild(img);
+        return img;
+    });
 
-    // Always cycle every image through the top/center card (index 2, rotation 0deg)
-    const topCard = fanCards[2];
-    let nextImgIdx = N % pastCEOs.length; // start after the 5 initial images
+    const caption = document.createElement('div');
+    caption.className = 'slide-caption';
+    caption.textContent = pastCEOs[0].name;
+    deck.appendChild(caption);
 
+    let current = 0;
     setInterval(() => {
-        const { el, imgEl } = topCard;
-
-        el.classList.add('fan-shuffling');
-
-        setTimeout(() => {
-            imgEl.src = pastCEOs[nextImgIdx].image;
-            imgEl.alt = pastCEOs[nextImgIdx].name;
-            imgEl.style.display = '';
-            nextImgIdx = (nextImgIdx + 1) % pastCEOs.length;
-        }, 275);
-
-        setTimeout(() => {
-            el.classList.remove('fan-shuffling');
-        }, 600);
-    }, 1400);
+        imgs[current].classList.remove('slide-active');
+        current = (current + 1) % imgs.length;
+        imgs[current].classList.add('slide-active');
+        caption.textContent = pastCEOs[current].name;
+    }, 2200);
 }
 
 // Start staggered card animations
