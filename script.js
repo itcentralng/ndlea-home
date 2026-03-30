@@ -284,33 +284,25 @@ function initCceosDeck() {
         fanCards.push({ el: card, imgEl: img });
     }
 
-    // Track which commander index each fan slot is showing
-    const slotIndices = Array.from({ length: N }, (_, i) => i % pastCEOs.length);
-    let nextImgIdx = N % pastCEOs.length; // next image to pull in
-    let flipSlot = 0; // which fan slot to shuffle next
+    // Always cycle every image through the top/center card (index 2, rotation 0deg)
+    const topCard = fanCards[2];
+    let nextImgIdx = N % pastCEOs.length; // start after the 5 initial images
 
     setInterval(() => {
-        const { el, imgEl } = fanCards[flipSlot];
+        const { el, imgEl } = topCard;
 
-        // Kick off fade animation
         el.classList.add('fan-shuffling');
 
-        // At the midpoint, swap the image
         setTimeout(() => {
             imgEl.src = pastCEOs[nextImgIdx].image;
             imgEl.alt = pastCEOs[nextImgIdx].name;
             imgEl.style.display = '';
-            slotIndices[flipSlot] = nextImgIdx;
             nextImgIdx = (nextImgIdx + 1) % pastCEOs.length;
-        }, 275); // halfway through 0.55s animation
+        }, 275);
 
-        // Remove class after animation finishes
         setTimeout(() => {
             el.classList.remove('fan-shuffling');
         }, 600);
-
-        // Cycle to next slot
-        flipSlot = (flipSlot + 1) % N;
     }, 1400);
 }
 
