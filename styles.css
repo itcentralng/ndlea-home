@@ -514,6 +514,7 @@ body {
     gap: var(--s3);
     min-height: 210px;
     justify-content: center;
+    margin-top: var(--s10);
 }
 
 /* Left card: fanned photo deck */
