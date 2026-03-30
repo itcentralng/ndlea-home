@@ -250,6 +250,68 @@ function initializeHomePage() {
     
     // Populate current GOC biography only (commanders grid is in pastCeosView)
     populateCurrentGocBiography();
+    
+    // Init the past CCEOs deck fan
+    initCceosDeck();
+}
+
+// Fan rotations for 5 cards (degrees), spread like a hand of cards
+const FAN_ROTATIONS = [-26, -13, 0, 13, 26];
+const FAN_TRANSLATIONS = [8, 3, 0, 3, 8]; // extra translateY to arc the tips up
+
+function initCceosDeck() {
+    const deck = document.getElementById('cceosDeck');
+    if (!deck) return;
+
+    // All past commanders (exclude current/last)
+    const pastCEOs = commanders.slice(0, -1);
+    const N = Math.min(5, pastCEOs.length);
+
+    // Create the N static fan card elements once
+    deck.innerHTML = '';
+    const fanCards = [];
+    for (let i = 0; i < N; i++) {
+        const card = document.createElement('div');
+        card.className = 'fan-card';
+        // Apply fan rotation as inline transform so nth-child z-index still applies
+        card.style.transform = `rotate(${FAN_ROTATIONS[i]}deg) translateY(${FAN_TRANSLATIONS[i]}px)`;
+        const img = document.createElement('img');
+        img.src = pastCEOs[i % pastCEOs.length].image;
+        img.alt = pastCEOs[i % pastCEOs.length].name;
+        img.onerror = () => { img.style.display = 'none'; };
+        card.appendChild(img);
+        deck.appendChild(card);
+        fanCards.push({ el: card, imgEl: img });
+    }
+
+    // Track which commander index each fan slot is showing
+    const slotIndices = Array.from({ length: N }, (_, i) => i % pastCEOs.length);
+    let nextImgIdx = N % pastCEOs.length; // next image to pull in
+    let flipSlot = 0; // which fan slot to shuffle next
+
+    setInterval(() => {
+        const { el, imgEl } = fanCards[flipSlot];
+
+        // Kick off fade animation
+        el.classList.add('fan-shuffling');
+
+        // At the midpoint, swap the image
+        setTimeout(() => {
+            imgEl.src = pastCEOs[nextImgIdx].image;
+            imgEl.alt = pastCEOs[nextImgIdx].name;
+            imgEl.style.display = '';
+            slotIndices[flipSlot] = nextImgIdx;
+            nextImgIdx = (nextImgIdx + 1) % pastCEOs.length;
+        }, 275); // halfway through 0.55s animation
+
+        // Remove class after animation finishes
+        setTimeout(() => {
+            el.classList.remove('fan-shuffling');
+        }, 600);
+
+        // Cycle to next slot
+        flipSlot = (flipSlot + 1) % N;
+    }, 1400);
 }
 
 // Start staggered card animations
@@ -1533,30 +1595,45 @@ function populateCurrentGocBiography() {
     if (!currentGocBiography) return;
 
     const currentCommander = commanders[commanders.length - 1];
+    const rawBio = currentCommander.biography || '';
 
-    // Decorations badge
     const decorationsHtml = currentCommander.decorations && currentCommander.decorations.trim() !== ''
-        ? `<div class="home-ceo-decorations">${currentCommander.decorations}</div>`
+        ? `<div class="commander-decorations"><span class="decorations-list">${currentCommander.decorations}</span></div>`
         : '';
 
-    // Bio excerpt: skip heading-only lines (all-caps / short), collect first two prose paragraphs in full
-    const rawBio = currentCommander.biography || '';
+    // Extract first 3 prose paragraphs for the snippet
     const paragraphs = rawBio.split(/\n\n+/).map(p => p.trim()).filter(Boolean);
-    const proseParas = paragraphs.filter(p => p.length > 80 && !/^[A-Z0-9\s\.\(\)\/\-,&']+$/.test(p));
-    const bioSnippetHtml = proseParas.slice(0, 2).map(p => `<p>${p}</p>`).join('') || `<p>${paragraphs[0] || ''}</p>`;
+    const proseParas = paragraphs.filter(p => p.length > 60 && !/^[A-Z0-9\s\.\(\)\/\-,&']+$/.test(p));
+    const snippetHtml = proseParas.slice(0, 3).map(p => `<p>${p}</p>`).join('') || `<p>${paragraphs[0] || ''}</p>`;
+
+    // Make section clickable
+    const section = currentGocBiography.closest('section.current-goc-biography') || currentGocBiography.parentElement;
+    if (section && !section.dataset.clickBound) {
+        section.dataset.clickBound = '1';
+        section.addEventListener('click', () => showBiographyView(currentCommander.id));
+    }
 
     currentGocBiography.innerHTML = `
-        <div class="home-ceo-label">Current Chairman / CEO</div>
-        <div class="home-ceo-portrait-row">
-            <img src="${currentCommander.image}" alt="${currentCommander.name}" class="home-ceo-portrait" onerror="this.src='images/placeholder.jpg'">
-            <div class="home-ceo-info">
-                <div class="home-ceo-name">${currentCommander.name}</div>
-                <div class="home-ceo-period">${currentCommander.yearOfService}</div>
+        <div class="portrait-container">
+            <div class="portrait-frame">
+                <img src="${currentCommander.image}" alt="${currentCommander.name}" class="commander-portrait" onerror="this.src='images/placeholder.jpg'">
+                <div class="portrait-shine"></div>
+            </div>
+            <div class="portrait-info">
+                <h1 class="commander-title">${currentCommander.name}</h1>
+                <p class="commander-service-period">${currentCommander.yearOfService}</p>
                 ${decorationsHtml}
             </div>
         </div>
-        <div class="home-ceo-bio">${bioSnippetHtml}</div>
-        <button class="home-ceo-view-btn" onclick="showBiographyView(${currentCommander.id})">View Full Profile →</button>
+        <div class="biography-text-container">
+            <div class="biography-text-box">
+                <div class="text-box-header">
+                    <span class="header-text">BIOGRAPHY</span>
+                </div>
+                <div class="typing-text">${snippetHtml}</div>
+            </div>
+            <div class="tap-hint">Tap to read full profile &rsaquo;</div>
+        </div>
     `;
 }
 

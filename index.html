@@ -44,26 +44,38 @@
             <div class="home-content">
 
                 <!-- 1. History -->
-                <div class="history-circle-wrap">
-                    <div class="history-circle" onclick="showHistoryView()">
-                        <img src="images/ndlea-logo.png" alt="NDLEA Logo" class="history-circle-logo">
-                        <span class="history-circle-label">History of NDLEA</span>
+                <div class="home-history-header">
+                    <div class="history-card" onclick="showHistoryView()">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <div class="card-icon">
+                                    <img src="images/ndlea-logo.png" alt="NDLEA Logo" class="header-logo" id="logo">
+                                </div>
+                                <div class="card-title">HISTORY OF NDLEA</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Title -->
+                <h1 class="commanders-section-title" id="typedTitle">CHRONICLE OF CHAIRMEN/CHIEF EXECUTIVE OFFICERS<br>NATIONAL DRUG LAW ENFORCEMENT AGENCY</h1>
+
                 <!-- 2. Current CEO (populated by JS) -->
-                <div class="home-ceo-card" id="currentGocBiography"></div>
+                <section class="current-goc-biography">
+                    <div class="current-goc-badge">CURRENT CHAIRMAN/CEO</div>
+                    <div class="biography-layout" id="currentGocBiography">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </section>
 
                 <!-- 3. Past CCEOs -->
-                <div class="cards-row row-solo">
-                    <div class="nav-card" onclick="showPastCeosView()">
-                        <div class="nav-card-icon-wrap">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
-                                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
+                <div class="cceos-split-row">
+                    <!-- Left: fanned photo deck -->
+                    <div class="cceos-deck-card" onclick="showPastCeosView()">
+                        <div class="cceos-fan" id="cceosDeck"></div>
+                    </div>
+                    <!-- Right: text card -->
+                    <div class="cceos-text-card" onclick="showPastCeosView()">
                         <div class="nav-card-body">
                             <div class="nav-card-title">Profiles of Past &amp; Present Chairmen / CEOs</div>
                             <div class="nav-card-desc">Eleven leaders who shaped the Agency from its founding in 1990 to the present day</div>
