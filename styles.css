@@ -608,7 +608,7 @@ body {
 
 /* NAV CARDS */
 .cards-row { display: flex; gap: var(--s3); margin-top: var(--s10); }
-.row-triple, .row-double { flex: none; }
+.row-triple, .row-double, .row-all { flex: none; }
 
 .nav-card {
     position: relative;
@@ -637,7 +637,7 @@ body {
     transform: translateX(3px);
 }
 
-.card-vertical, .row-triple .nav-card, .row-double .nav-card {
+.card-vertical, .row-triple .nav-card, .row-double .nav-card, .row-all .nav-card {
     flex: 1;
     flex-direction: column;
     align-items: center;
@@ -653,8 +653,8 @@ body {
     transition: transform 0.4s cubic-bezier(0.4,0,0.2,1), box-shadow 0.4s, border-color 0.3s;
 }
 
-.row-triple .nav-card:hover, .row-double .nav-card:hover,
-.row-triple .nav-card:active, .row-double .nav-card:active {
+.row-triple .nav-card:hover, .row-double .nav-card:hover, .row-all .nav-card:hover,
+.row-triple .nav-card:active, .row-double .nav-card:active, .row-all .nav-card:active {
     transform: translateY(-5px) scale(1.03);
     box-shadow: var(--sh-red);
     border-color: var(--red);
