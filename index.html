@@ -37,136 +37,137 @@
                     <span class="navbar-name-sub">National Drug Law Enforcement Agency</span>
                 </div>
             </div>
-            <button class="navbar-history-btn" onclick="showHistoryView()">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                    <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                History of NDLEA
-            </button>
         </nav>
 
-        <!-- Home Body -->
+        <!-- Home Body: single centered column -->
         <div class="home-body">
+            <div class="home-content">
 
-            <!-- Left: Current CEO Card (populated by JS) -->
-            <div class="home-left">
-                <div class="home-ceo-card" id="currentGocBiography">
-                    <!-- populated by populateCurrentGocBiography() -->
+                <!-- 1. History -->
+                <div class="cards-row row-solo">
+                    <div class="nav-card" onclick="showHistoryView()">
+                        <div class="nav-card-icon-wrap">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="nav-card-body">
+                            <div class="nav-card-title">History of NDLEA</div>
+                            <div class="nav-card-desc">The founding, growth and milestones of the National Drug Law Enforcement Agency from 1989 to date</div>
+                        </div>
+                        <div class="nav-card-chevron">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Right: Title + Nav Cards -->
-            <div class="home-right">
-                <h2 class="home-section-title">
-                    Chronicle of Chairmen / Chief Executive Officers
-                    <span>National Drug Law Enforcement Agency</span>
-                </h2>
+                <!-- 2. Current CEO (populated by JS) -->
+                <div class="home-ceo-card" id="currentGocBiography"></div>
 
-                <div class="nav-cards-section">
-
-                    <!-- Row 1: Past CEOs (solo) -->
-                    <div class="cards-row row-solo">
-                        <div class="nav-card" onclick="showPastCeosView()">
-                            <div class="nav-card-icon-wrap">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
-                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                            <div class="nav-card-body">
-                                <div class="nav-card-title">Profiles of Past &amp; Present Chairmen / CEOs</div>
-                                <div class="nav-card-desc">Eleven leaders who shaped the Agency from its founding in 1990 to the present day</div>
-                            </div>
-                            <div class="nav-card-chevron">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                    <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
+                <!-- 3. Past CCEOs -->
+                <div class="cards-row row-solo">
+                    <div class="nav-card" onclick="showPastCeosView()">
+                        <div class="nav-card-icon-wrap">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="nav-card-body">
+                            <div class="nav-card-title">Profiles of Past &amp; Present Chairmen / CEOs</div>
+                            <div class="nav-card-desc">Eleven leaders who shaped the Agency from its founding in 1990 to the present day</div>
+                        </div>
+                        <div class="nav-card-chevron">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Row 2: Secretary | Assistants | Directors -->
-                    <div class="cards-row row-triple">
-                        <div class="nav-card card-vertical" onclick="showContentView('secretary')">
-                            <div class="nav-card-icon-wrap">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                                    <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
-                                    <path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                </svg>
-                            </div>
-                            <div class="nav-card-title">Agency Secretaries</div>
-                            <div class="nav-card-desc">Administrative heads of the Secretariat from inception</div>
+                <!-- 4. Agency Secretaries | Special Assistants | Directors -->
+                <div class="cards-row row-triple">
+                    <div class="nav-card card-vertical" onclick="showContentView('secretary')">
+                        <div class="nav-card-icon-wrap">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
+                                <path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
                         </div>
-                        <div class="nav-card card-vertical" onclick="showContentView('assistants')">
-                            <div class="nav-card-icon-wrap">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                            <div class="nav-card-title">Special Assistants</div>
-                            <div class="nav-card-desc">SAs, Chiefs of Staff and Military Assistants to the Chairman/CEO</div>
+                        <div class="nav-card-title">Agency Secretaries</div>
+                        <div class="nav-card-desc">Administrative heads of the Secretariat from inception</div>
+                    </div>
+                    <div class="nav-card card-vertical" onclick="showContentView('assistants')">
+                        <div class="nav-card-icon-wrap">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
                         </div>
-                        <div class="nav-card card-vertical" onclick="showContentView('directors')">
-                            <div class="nav-card-icon-wrap">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <polyline points="9 22 9 12 15 12 15 22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                            <div class="nav-card-title">Directors</div>
-                            <div class="nav-card-desc">Directorate heads and their departmental portfolios</div>
+                        <div class="nav-card-title">Special Assistants</div>
+                        <div class="nav-card-desc">SAs, Chiefs of Staff and Military Assistants to the Chairman/CEO</div>
+                    </div>
+                    <div class="nav-card card-vertical" onclick="showContentView('directors')">
+                        <div class="nav-card-icon-wrap">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <polyline points="9 22 9 12 15 12 15 22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="nav-card-title">Directors</div>
+                        <div class="nav-card-desc">Directorate heads and their departmental portfolios</div>
+                    </div>
+                </div>
+
+                <!-- 5. Achievements | Gallery -->
+                <div class="cards-row row-double">
+                    <div class="nav-card card-vertical" onclick="showContentView('achievements')">
+                        <div class="nav-card-icon-wrap">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="nav-card-title">Achievements</div>
+                        <div class="nav-card-desc">Record-breaking drug seizures, cannabis farm destruction and exhibit burning</div>
+                    </div>
+                    <div class="nav-card card-vertical" onclick="showContentView('gallery')">
+                        <div class="nav-card-icon-wrap">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="8.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="2"/>
+                                <polyline points="21 15 16 10 5 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="nav-card-title">Gallery of Events</div>
+                        <div class="nav-card-desc">Awards, international meetings and UN Day events</div>
+                    </div>
+                </div>
+
+                <!-- 6. Infrastructure -->
+                <div class="cards-row row-solo">
+                    <div class="nav-card" onclick="showContentView('infrastructure')">
+                        <div class="nav-card-icon-wrap">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                                <path d="M2 20h20M4 20V10l8-7 8 7v10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9 20V14h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="nav-card-body">
+                            <div class="nav-card-title">Infrastructure &amp; Institutional Development</div>
+                            <div class="nav-card-desc">Barracks, vehicles, trainings, rehabilitation centres and alternative development initiatives</div>
+                        </div>
+                        <div class="nav-card-chevron">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Row 3: Achievements | Gallery -->
-                    <div class="cards-row row-double">
-                        <div class="nav-card card-vertical" onclick="showContentView('achievements')">
-                            <div class="nav-card-icon-wrap">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                            <div class="nav-card-title">Achievements</div>
-                            <div class="nav-card-desc">Record-breaking drug seizures, cannabis farm destruction and exhibit burning</div>
-                        </div>
-                        <div class="nav-card card-vertical" onclick="showContentView('gallery')">
-                            <div class="nav-card-icon-wrap">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                                    <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
-                                    <circle cx="8.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="2"/>
-                                    <polyline points="21 15 16 10 5 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                            <div class="nav-card-title">Gallery of Events</div>
-                            <div class="nav-card-desc">Awards, international meetings and UN Day events</div>
-                        </div>
-                    </div>
-
-                    <!-- Row 4: Infrastructure (solo) -->
-                    <div class="cards-row row-solo">
-                        <div class="nav-card" onclick="showContentView('infrastructure')">
-                            <div class="nav-card-icon-wrap">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                                    <path d="M2 20h20M4 20V10l8-7 8 7v10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M9 20V14h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                            <div class="nav-card-body">
-                                <div class="nav-card-title">Infrastructure &amp; Institutional Development</div>
-                                <div class="nav-card-desc">Barracks, vehicles, trainings, rehabilitation centres and alternative development initiatives</div>
-                            </div>
-                            <div class="nav-card-chevron">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                    <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-
-                </div><!-- end nav-cards-section -->
-            </div><!-- end home-right -->
+            </div><!-- end home-content -->
         </div><!-- end home-body -->
     </div><!-- end homeView -->
 
